@@ -32,4 +32,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'sebastianmarkow/deoplete-rust'
     Plug 'ryanoasis/vim-devicons'
     Plug 'dracula/vim', { 'as': 'dracula' }
+    Plug 'cpiger/NeoDebug'
+    Plug 'sirver/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'kana/vim-smartinput'
 call plug#end()
