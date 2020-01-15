@@ -1,10 +1,9 @@
-set pastetoggle=<F2>    
-set pyxversion=3    
+set pyxversion=3
 let g:python3_host_prog="/usr/bin/python3"
 
-if empty(glob('~/.config/nvim/autoload/plug.vim'))    
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim    
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC    
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -36,4 +35,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'sirver/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'kana/vim-smartinput'
+    Plug 'luochen1990/rainbow'
+    Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()

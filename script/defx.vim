@@ -3,6 +3,7 @@ call defx#custom#option('_', {
       \ 'split': 'vertical',
       \ 'direction': 'topleft',
       \ 'show_ignored_files': 0,
+      \ 'ignored_files': '*.pyc,*.o,*.so,*.d,*.lo,*~,*.la,.deps,.libs,.git,.svn,*.cache',
       \ 'buffer_name': '',
       \ 'toggle': 1,
       \ 'resume': 1,

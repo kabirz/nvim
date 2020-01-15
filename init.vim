@@ -7,5 +7,6 @@ runtime script/defx.vim
 runtime script/deoplete.vim
 runtime script/leaderf.vim
 runtime script/snippets.vim
+runtime script/highlight.vim
 runtime script/key_map.vim
 runtime script/ready.vim
