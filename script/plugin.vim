@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'francoiscabrol/ranger.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'tmhedberg/SimpylFold', { 'for' :['python', 'vim-plug'] }
+"    Plug 'tmhedberg/SimpylFold', { 'for' :['python', 'vim-plug'] }
     Plug 'Vimjas/vim-python-pep8-indent', { 'for' :['python', 'vim-plug'] }
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
     Plug 'tweekmonster/braceless.vim'
@@ -26,10 +26,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'kristijanhusak/defx-icons'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-jedi'
+    Plug 'zchee/deoplete-jedi', { 'for' :['python', 'vim-plug'] }
     Plug 'Shougo/deoplete-clangx'
     Plug 'Shougo/neoinclude.vim'
-    Plug 'sebastianmarkow/deoplete-rust'
+    Plug 'sebastianmarkow/deoplete-rust', {'for' : ['rust', 'vim-plug']}
     Plug 'ryanoasis/vim-devicons'
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'cpiger/NeoDebug'
