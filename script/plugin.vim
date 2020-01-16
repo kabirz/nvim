@@ -37,4 +37,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'kana/vim-smartinput'
     Plug 'luochen1990/rainbow'
     Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
