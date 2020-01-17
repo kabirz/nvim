@@ -14,7 +14,7 @@ autocmd FileType defx call s:defx_my_settings()
 " more configure in: https://github.com/Silnar/dotfiles/blob/43608ed6a68bd105aeaf0e7f886c14aa0baecc0d/.config/nvim/init.vim
 function! s:defx_my_settings() abort
         nnoremap <silent><buffer><expr> <CR> <SID>defx_toggle_tree()
-        nnoremap <silent><buffer><expr> C-<CR> defx#do_action('open', 'tabe')
+        nnoremap <silent><buffer><expr> tb  defx#do_action('open', 'tabe')
 	nnoremap <silent><buffer><expr> d  defx#do_action('remove')
   	nnoremap <silent><buffer><expr> r  defx#do_action('rename')
 	nnoremap <silent><buffer><expr> m  defx#do_action('new_directory')
