@@ -1,5 +1,6 @@
 " set paste
-set pastetoggle=<F2>
+noremap <silent><F2> :wincmd w<CR>
+set pastetoggle=<F5>
 noremap <silent><F3> :Defx<CR>
 " leaderf
 noremap <silent><F4> :Leaderf! file<CR>
