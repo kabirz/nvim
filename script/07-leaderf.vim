@@ -13,3 +13,4 @@ let g:Lf_NormalMap = {
 
 let g:Lf_GtagsAutoGenerate = 1
 let g:Lf_Gtagslabel = 'native-pygments'
+let g:Lf_ReverseOrder = 1

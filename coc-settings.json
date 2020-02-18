@@ -1,0 +1,4 @@
+{
+	"http.proxy": "http://child-prc.intel.com:913",
+	"explorer.icon.enableNerdfont": true
+}

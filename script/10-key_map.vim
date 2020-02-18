@@ -1,7 +1,8 @@
 " set paste
 noremap <silent><F2> :wincmd w<CR>
 set pastetoggle=<F5>
-noremap <silent><F3> :Defx<CR>
+" noremap <silent><F3> :Defx<CR>
+noremap <silent><F3> :CocCommand explorer<CR>
 " leaderf
 noremap <silent><F4> :Leaderf! file<CR>
 noremap <silent><F6> :LeaderfFunction!<CR>
