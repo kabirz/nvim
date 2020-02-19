@@ -14,6 +14,6 @@ if has("termguicolors")
 endif
 
 filetype off  " required!
-filetype plugin indent on     " required!
 set nocompatible
+filetype plugin indent on     " required!
 set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936

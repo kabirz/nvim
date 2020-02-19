@@ -17,18 +17,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'francoiscabrol/ranger.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
     Plug 'tweekmonster/braceless.vim'
     Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'Shougo/deoplete-clangx'
     Plug 'Shougo/neoinclude.vim'
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'cpiger/NeoDebug'
     Plug 'sirver/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'luochen1990/rainbow'
-    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'huleiak47/vim-cmake-complete'
 call plug#end()
 
 for name in g:plugs_order

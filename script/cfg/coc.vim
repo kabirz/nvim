@@ -1,4 +1,5 @@
 let g:coc_global_extensions = [
+	\'coc-ccls',
 	\'coc-css',
 	\'coc-emmet',
 	\'coc-explorer',
