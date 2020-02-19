@@ -7,7 +7,6 @@ set shell=/bin/sh
 set smartindent    
 set encoding=utf-8
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-set encoding=utf-8
 
 if has("termguicolors")
     " enable true color

@@ -1,9 +1,10 @@
 set pyxversion=3
 let g:python3_host_prog="/usr/bin/python3"
+let $NVIM_CFG_PATH='~/.config/nvim'
 
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  autocmd VimEnter * PlugInstall --sync | runtime $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -12,7 +13,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'junegunn/vim-easy-align'
-    Plug 'mattn/emmet-vim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'francoiscabrol/ranger.vim'
@@ -27,7 +27,24 @@ call plug#begin('~/.vim/plugged')
     Plug 'cpiger/NeoDebug'
     Plug 'sirver/ultisnips'
     Plug 'honza/vim-snippets'
-    Plug 'kana/vim-smartinput'
     Plug 'luochen1990/rainbow'
     Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
+
+for name in g:plugs_order
+	if name == 'vim-airline-themes'
+		source $NVIM_CFG_PATH/script/cfg/airline.vim
+	elseif name == 'coc.nvim'
+		source $NVIM_CFG_PATH/script/cfg/coc.vim
+	elseif name == 'deoplete.nvim'
+		source $NVIM_CFG_PATH/script/cfg/deoplete.vim
+	elseif name == 'fzf.vim'
+		source $NVIM_CFG_PATH/script/cfg/fzf.vim
+	elseif name == 'vim-cpp-enhanced-highlight'
+		source $NVIM_CFG_PATH/script/cfg/highlight.vim
+	elseif name == 'LeaderF.vim'
+		source $NVIM_CFG_PATH/script/cfg/leaderf.vim
+	elseif name == 'vim-snippets'
+		source $NVIM_CFG_PATH/script/cfg/snippets.vim
+	endif
+endfor
