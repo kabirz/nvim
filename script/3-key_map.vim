@@ -19,7 +19,7 @@ noremap <silent><leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR>
 noremap <silent><leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
 noremap <silent><leader>ff :<C-U><C-R>=printf("Leaderf! rg  %s", expand("<cword>"))<CR><CR>
 
-" window 
+" window
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
