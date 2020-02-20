@@ -26,3 +26,4 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <silent><leader>ev :tabe $MYVIMRC<CR>
 nnoremap <silent><leader>sv :source $MYVIMRC<CR>
+nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<CR>
