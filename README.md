@@ -2,10 +2,10 @@
 
 ## for dein
 ```bash
-git clone https://github.com/kabirz/nvim -b dein
+git clone https://github.com/kabirz/nvim ~/.config/nvim/ -b dein
 ```
 
 ## for vim-plug
 ```bash
-git clone https://github.com/kabirz/nvim -b plug
+git clone https://github.com/kabirz/nvim ~/.config/nvim/ -b plug
 ```
