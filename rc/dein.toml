@@ -137,3 +137,6 @@ repo = 'huleiak47/vim-cmake-complete'
 [[plugins]] # startup
 repo = 'mhinz/vim-startify'
 
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
