@@ -3,7 +3,10 @@ let g:python3_host_prog="/usr/bin/python3"
 let $NVIM_CFG_PATH='~/.config/nvim'
 
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !git clone --depth 1  https://github.com/junegunn/vim-plug /tmp/vim-plug
+  silent !mkdir -p  ~/.config/nvim/autoload
+  silent !cp /tmp/vim-plug/plug.vim ~/.config/nvim/autoload/
+  silent !rm -fr /tmp/vim-plug
   autocmd VimEnter * PlugInstall --sync | runtime $MYVIMRC
 endif
 
