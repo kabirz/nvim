@@ -1,3 +1,30 @@
-# nvim
+# nvim config for vim-plug
+```bash
+git clone https://github.com/kabirz/nvim ~/.config/nvim/ -b plug
+```
 
-git clone https://github.com/kabirz/nvim.git ~/.config/nvim
+### Keymap
+
+
+
+| Key             | context                   |
+| --------------  | ------------------------- |
+| \<space>h/j/k/l | \<C-W>h/j/k/l             |
+| \<leader>ev     | tabedit $MYVIMRC          |
+| \<leader>sv     | source $MYVIMRC           |
+| \<space>c       | close vim                 |
+| \<C-p>          | fzf                       |
+| \<C-f>          | ag                        |
+| \<space>r       | ranger                    |
+| \<space>y       | coc yank                  |
+| \<space>a       | coc explorer              |
+| \<leader> t     | coc-translator popup      |
+| \<leader>e      | coc-translator echo       |
+| \<leader>r      | coc-translator replace    |
+| \<space>fi      | leaderf file              |
+| \<space>fu      | leaderf function          |
+| \<space>fr      | leaderf gtag --reference  |
+| \<space>fd      | leaderf gtag --defination |
+| \<space>fo      | leader gtag --recall      |
+| \<space>ff      | leader rg                 |
+

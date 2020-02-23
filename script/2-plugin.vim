@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'huleiak47/vim-cmake-complete'
   Plug 'mhinz/vim-startify'
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 for name in g:plugs_order
