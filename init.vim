@@ -50,14 +50,17 @@ if dein#check_install()
 endif
 
 " window
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <space>h <C-w>h
+nnoremap <space>j <C-w>j
+nnoremap <space>k <C-w>k
+nnoremap <space>l <C-w>l
+nnoremap <space>o <C-o>
+nnoremap <space>i <C-i>
 nnoremap <silent><leader>ev :tabe $MYVIMRC<CR>
 nnoremap <silent><leader>sv :source $MYVIMRC<CR>
 
 " set paste
-set pastetoggle=<F5>
-noremap <silent><F2> :wincmd w<CR>
+set pastetoggle=<space>p
+" close vim
+noremap <silent><space>c :qa <CR>
 set autochdir
