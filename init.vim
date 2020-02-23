@@ -7,7 +7,9 @@ set shell=/bin/sh
 set smartindent
 set encoding=utf-8
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-
+if exists('g:vscode')
+	finish
+endif
 if has("termguicolors")
   " enable true color
   set termguicolors
@@ -28,7 +30,7 @@ let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if &runtimepath !~# '/dein.vim'
     if !isdirectory(s:dein_repo_dir)
-        execute '!git clone --depth 1 https://github.com/Shougo/dein.vim' s:dein_repo_dir
+        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
     endif
     execute 'set runtimepath^=' . s:dein_repo_dir
 endif
@@ -56,6 +58,6 @@ nnoremap <silent><leader>ev :tabe $MYVIMRC<CR>
 nnoremap <silent><leader>sv :source $MYVIMRC<CR>
 
 " set paste
-noremap <silent><F2> :wincmd w<CR>
 set pastetoggle=<F5>
+noremap <silent><F2> :wincmd w<CR>
 set autochdir
