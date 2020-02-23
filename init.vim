@@ -1,3 +1,9 @@
+"  __  __        __     ___
+" |  \/  |_   _  \ \   / (_)_ __ ___  _ __ ___
+" | |\/| | | | |  \ \ / /| | '_ ` _ \| '__/ __|
+" | |  | | |_| |   \ V / | | | | | | | | | (__
+" |_|  |_|\__, |    \_/  |_|_| |_| |_|_|  \___|
+"         |___/
 set number
 set tabstop=8
 set incsearch
@@ -38,7 +44,6 @@ endif
 let g:vimrc_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 if dein#load_state(s:dein_dir)
     call dein#begin(s:dein_dir)
-
     call dein#load_toml(g:vimrc_dir.  '/rc/dein.toml', {'lazy': 0})
     call dein#load_toml(g:vimrc_dir.  '/rc/dein-lazy.toml', {'lazy': 1})
     call dein#end()
