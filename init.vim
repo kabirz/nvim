@@ -4,6 +4,7 @@
 " | |  | | |_| |   \ V / | | | | | | | | | (__
 " |_|  |_|\__, |    \_/  |_|_| |_| |_|_|  \___|
 "         |___/
+
 set number
 set tabstop=8
 set incsearch
@@ -69,3 +70,4 @@ set pastetoggle=<space>p
 " close vim
 noremap <silent><space>c :qa <CR>
 set autochdir
+set autowriteall

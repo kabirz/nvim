@@ -5,7 +5,7 @@ git clone https://github.com/kabirz/nvim ~/.config/nvim/
 
 ### Keymap
 
-| Key             | context                   |
+| Key             | content                   |
 | --------------- | ------------------------- |
 | \<space>h/j/k/l | \<C-W>h/j/k/l             |
 | \<leader>ev     | tabedit $MYVIMRC          |
@@ -26,4 +26,6 @@ git clone https://github.com/kabirz/nvim ~/.config/nvim/
 | \<space>fd      | leaderf gtag --defination |
 | \<space>fo      | leader gtag --recall      |
 | \<space>ff      | leader rg                 |
+| \<space>fm      | leader mru current        |
+| \<space>fh      | leader mru all history    |
 
