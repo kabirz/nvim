@@ -55,6 +55,11 @@ if dein#check_install()
     call dein#install()
 endif
 
+if dein#check_clean() != []
+    call map(dein#check_clean(), "delete(v:val, 'rf')")
+    call dein#recache_runtimepath()
+endif
+
 " window
 nnoremap <space>h <C-w>h
 nnoremap <space>j <C-w>j
