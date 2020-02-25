@@ -36,6 +36,7 @@ ln -s .config/nvim/init.vim ~/.vimrc
 | be              | :blast                    |
 | bh              | :bnext                    |
 | bl              | :bprevious                |
+| bp              | change dirctory to file   |
 | tf              | :tabfirst                 |
 | te              | :tablast                  |
 | th              | :tabnext                  |

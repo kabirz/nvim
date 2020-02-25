@@ -76,6 +76,7 @@ nnoremap <silent>bh :bprevious<CR>
 nnoremap <silent>bl :bnext<CR>
 nnoremap <silent>b- :b#<CR>
 nnoremap <silent>bd :bd<CR>
+nnoremap <silent>bp :<C-U><C-R>=printf("chdir %s", expand('%:h'))<CR><CR>
 
 " tab keymap
 nnoremap <silent>tf :tabfirst<CR>

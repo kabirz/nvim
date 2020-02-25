@@ -1,6 +1,7 @@
 {
 	"http.proxy": "http://child-prc.intel.com:913",
-	"explorer.width": 36,
+	"explorer.width": 28,
+	"explorer.icon.enableVimDevicons": true,
 	"explorer.previewAction.onHover": false,
 	"explorer.file.column.git.showIgnored": true,
 	"git.enableGlobalStatus": false,
@@ -12,10 +13,15 @@
 	"git.topRemovedSign.text": "",
 	"git.changeRemovedSign.text": "",
 	"git.branchCharacter": "",
+	"explorer.icon.expanded": " ",
+	"explorer.icon.collapsed": " ",
+	"explorer.icon.selected": "",
 	"explorer.file.column.git.icon.added": "",
 	"explorer.file.column.git.icon.modified": "",
-	"explorer.file.column.git.icon.deleted": "",
+	"explorer.file.column.git.icon.deleted": "",
 	"explorer.file.column.git.icon.renamed": "",
 	"explorer.file.column.git.icon.ignored": "",
+	"explorer.file.column.git.icon.unmerged": "◦",
+	"explorer.file.column.git.icon.untracked": "",
 	"explorer.icon.enableNerdfont": true
 }

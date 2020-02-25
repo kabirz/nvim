@@ -66,7 +66,7 @@ let g:coc_global_extensions = [
 	\'coc-yank',
 	\]
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<CR>
-noremap <silent><space>a :<C-U><C-R>=printf("CocCommand explorer %s", expand('<sfile>:p'))<CR><CR>
+noremap <silent><space>a :<C-U><C-R>=printf("CocCommand explorer %s", expand('%:p:h'))<CR><CR>
 " popup
 nmap <leader>t <Plug>(coc-translator-p)
 vmap <leader>t <Plug>(coc-translator-pv)
