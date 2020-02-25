@@ -89,6 +89,6 @@ nnoremap <silent><space><space> :set mouse=a <CR>
 " close vim
 noremap <silent><space>c :qa <CR>
 " auto command
-set autochdir
+"set autochdir
 set autowriteall
 autocmd BufEnter * set mouse=
