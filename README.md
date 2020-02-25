@@ -2,6 +2,10 @@
 ```bash
 git clone https://github.com/kabirz/nvim ~/.config/nvim/
 ```
+### for vim
+```bash
+ln -s .config/nvim/init.vim ~/.vimrc
+```
 
 ### Keymap
 
