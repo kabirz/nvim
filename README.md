@@ -10,7 +10,7 @@ git clone https://github.com/kabirz/nvim ~/.config/nvim/
 | \<space>h/j/k/l | \<C-W>h/j/k/l             |
 | \<leader>ev     | tabedit $MYVIMRC          |
 | \<leader>sv     | source $MYVIMRC           |
-| \<space><sapce> | windcmd w                 |
+| \<space><sapce> | set mouse=a               |
 | \<space>c       | close vim                 |
 | \<C-p>          | fzf                       |
 | \<C-f>          | ag                        |
@@ -28,4 +28,12 @@ git clone https://github.com/kabirz/nvim ~/.config/nvim/
 | \<space>ff      | leader rg                 |
 | \<space>fm      | leader mru current        |
 | \<space>fh      | leader mru all history    |
+| bf              | :bfirst                   |
+| be              | :blast                    |
+| bh              | :bnext                    |
+| bl              | :bprevious                |
+| tf              | :tabfirst                 |
+| te              | :tablast                  |
+| th              | :tabnext                  |
+| tl              | :tabprevious              |
 

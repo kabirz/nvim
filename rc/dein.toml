@@ -2,6 +2,7 @@
  repo = 'vim-airline/vim-airline'
 hook_add = '''
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
 '''
 
 [[plugins]] # airline
@@ -55,7 +56,6 @@ let g:coc_global_extensions = [
 	\'coc-pyright',
 	\'coc-python',
 	\'coc-rls',
-	\'coc-rust-analyzer',
 	\'coc-sourcekit',
 	\'coc-stylelint',
 	\'coc-tailwindcss',

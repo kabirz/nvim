@@ -69,10 +69,26 @@ nnoremap <space>o <C-o>
 nnoremap <space>i <C-i>
 nnoremap <silent><leader>ev :tabe $MYVIMRC<CR>
 nnoremap <silent><leader>sv :source $MYVIMRC<CR>
+" buffer keymap
+nnoremap <silent>bf :bfirst<CR>
+nnoremap <silent>be :blast<CR>
+nnoremap <silent>bh :bprevious<CR>
+nnoremap <silent>bl :bnext<CR>
+nnoremap <silent>b- :b#<CR>
+nnoremap <silent>bd :bd<CR>
+
+" tab keymap
+nnoremap <silent>tf :tabfirst<CR>
+nnoremap <silent>te :tablast<CR>
+nnoremap <silent>th :tabprevious<CR>
+nnoremap <silent>tl :tabnext<CR>
 
 " set paste
 set pastetoggle=<space>p
+nnoremap <silent><space><space> :set mouse=a <CR>
 " close vim
 noremap <silent><space>c :qa <CR>
+" auto command
 set autochdir
 set autowriteall
+autocmd BufEnter * set mouse=

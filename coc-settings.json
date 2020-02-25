@@ -1,5 +1,7 @@
 {
 	"http.proxy": "http://child-prc.intel.com:913",
 	"explorer.width": 36,
+	"explorer.previewAction.onHover": false,
+	"explorer.file.column.git.showIgnored": true,
 	"explorer.icon.enableNerdfont": true
 }
