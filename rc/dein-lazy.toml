@@ -4,4 +4,4 @@ on_ft  = 'go'
 
 [[plugins]] # Rust
  repo = 'rust-lang/rust.vim'
- on_ft = 'rs'
+ on_ft = 'rust'
