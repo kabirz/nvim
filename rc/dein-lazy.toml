@@ -1,6 +1,11 @@
 [[plugins]] # Golang
 repo = 'fatih/vim-go'
 on_ft  = 'go'
+hook_add = '''
+let g:rustfmt_command = 'rustfmt'
+let g:cargo_makeprg_params = 'run'
+let g:cargo_shell_command_runner = '!'
+'''
 
 [[plugins]] # Rust
  repo = 'rust-lang/rust.vim'

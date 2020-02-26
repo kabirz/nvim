@@ -36,7 +36,6 @@ autocmd BufEnter * set mouse=
 autocmd FileType c,cpp,h set formatprg=uncrustify\ -c\ ~/.config/nvim/.uncrustify.cfg\ --no-backup\ 2>/dev/null
 "makeprg
 autocmd FileType c,cpp set makeprg=make\ %:t:r\ 1>/dev/null\ &&\ ./%:t:r
-autocmd FileType rust set makeprg=cargo\ run
 nnoremap <silent>gb :make<CR>
 "fold
 set foldmethod=syntax
