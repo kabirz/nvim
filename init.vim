@@ -15,7 +15,7 @@ set smartindent
 set encoding=utf-8
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 if exists('g:vscode')
-	finish
+    finish
 endif
 if has("termguicolors")
   " enable true color
@@ -67,5 +67,5 @@ if dein#check_clean() != []
 endif
 
 if !empty(glob(s:vimrc_dir.'/my.vim'))
-	runtime my.vim
+    runtime my.vim
 endif

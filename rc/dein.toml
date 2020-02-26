@@ -1,12 +1,12 @@
 [[plugins]] # airline
- repo = 'vim-airline/vim-airline'
+repo = 'vim-airline/vim-airline'
 hook_add = '''
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 '''
 
 [[plugins]] # airline
- repo = 'vim-airline/vim-airline-themes'
+repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
 let g:airline_theme="badwolf"
 '''
