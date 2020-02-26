@@ -67,5 +67,5 @@ if dein#check_clean() != []
 endif
 
 if !empty(glob(s:vimrc_dir.'/my.vim'))
-	source my.vim
+	runtime my.vim
 endif
