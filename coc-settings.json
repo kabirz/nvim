@@ -1,8 +1,8 @@
 {
 	"http.proxy": "http://child-prc.intel.com:913",
-	"explorer.width": 28,
+	"explorer.width": 36,
 	"explorer.icon.enableVimDevicons": true,
-	"explorer.previewAction.onHover": false,
+	"explorer.previewAction.onHover": true,
 	"explorer.file.column.git.showIgnored": true,
 	"git.enableGlobalStatus": false,
 	"git.enableGutters": true,
