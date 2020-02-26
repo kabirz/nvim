@@ -27,8 +27,15 @@ set nocompatible
 filetype plugin indent on     " required!
 set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 
-set pyxversion=3
-let g:python3_host_prog="/usr/bin/python3"
+if has('python3')
+    set pyxversion=3
+    let g:python3_host_prog="/usr/bin/python3"
+elseif has('python2')
+    set pyxversion=2
+    let g:python2_host_prog="/usr/bin/python2"
+endif
+
+let s:vimrc_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 " dein config
 
@@ -42,11 +49,10 @@ if &runtimepath !~# '/dein.vim'
     execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 
-let g:vimrc_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 if dein#load_state(s:dein_dir)
     call dein#begin(s:dein_dir)
-    call dein#load_toml(g:vimrc_dir.  '/rc/dein.toml', {'lazy': 0})
-    call dein#load_toml(g:vimrc_dir.  '/rc/dein-lazy.toml', {'lazy': 1})
+    call dein#load_toml(s:vimrc_dir.'/rc/dein.toml', {'lazy': 0})
+    call dein#load_toml(s:vimrc_dir.'/rc/dein-lazy.toml', {'lazy': 1})
     call dein#end()
     call dein#save_state()
 endif
@@ -60,4 +66,6 @@ if dein#check_clean() != []
     call dein#recache_runtimepath()
 endif
 
-source my.vim
+if !empty(glob(s:vimrc_dir.'/my.vim'))
+	source my.vim
+endif
