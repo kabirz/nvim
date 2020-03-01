@@ -61,11 +61,6 @@ if dein#check_install()
     call dein#install()
 endif
 
-if dein#check_clean() != []
-    call map(dein#check_clean(), "delete(v:val, 'rf')")
-    call dein#recache_runtimepath()
-endif
-
 if !empty(glob(s:vimrc_dir.'/my.vim'))
     runtime my.vim
 endif
