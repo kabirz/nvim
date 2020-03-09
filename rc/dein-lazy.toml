@@ -10,3 +10,12 @@ let g:rustfmt_command = 'rustfmt'
 let g:cargo_makeprg_params = 'run'
 let g:cargo_shell_command_runner = '!'
 '''
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+on_ft = ['rust']
+hook_source = '''
+nmap gd <Plug>(rust-def)
+nmap gs <Plug>(rust-def-split)
+nmap gx <Plug>(rust-def-vertical)
+nmap <leader>gd <Plug>(rust-doc)
+'''
