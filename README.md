@@ -7,6 +7,13 @@ git clone https://github.com/kabirz/nvim ~/.config/nvim/
 ln -s .config/nvim/init.vim ~/.vimrc
 ```
 
+### depends
+* node & npm
+* the_silver_searcher
+* ripgrep
+* ranger
+* powerline & nerd font
+
 ### Keymap
 
 | Key             | content                   |
@@ -21,14 +28,17 @@ ln -s .config/nvim/init.vim ~/.vimrc
 | \<space>r       | ranger                    |
 | \<space>y       | coc yank                  |
 | \<space>a       | coc explorer              |
-| \<leader> t     | coc-translator popup      |
+| \<leader>t      | coc-translator popup      |
 | \<leader>e      | coc-translator echo       |
 | \<leader>r      | coc-translator replace    |
 | \<space>fi      | leaderf file              |
 | \<space>fu      | leaderf function          |
 | \<space>fr      | leaderf gtag --reference  |
 | \<space>fd      | leaderf gtag --defination |
-| \<space>fo      | leader gtag --recall      |
+| \<space>fp      | leader gtag --recall      |
+| \<space>fs      | leaderf gtag --symbol     |
+| \<space>fg      | leaderf gtag --grep       |
+| \<space>fo      | leader gtag --by-context  |
 | \<space>ff      | leader rg                 |
 | \<space>fm      | leader mru current        |
 | \<space>fh      | leader mru all history    |

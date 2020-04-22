@@ -3,8 +3,7 @@ nnoremap <space>h <C-w>h
 nnoremap <space>j <C-w>j
 nnoremap <space>k <C-w>k
 nnoremap <space>l <C-w>l
-nnoremap <space>o <C-o>
-nnoremap <space>i <C-i>
+nnoremap <space><tab> <C-o>
 nnoremap <silent><leader>ev :tabe $MYVIMRC<CR>
 nnoremap <silent><leader>sv :source $MYVIMRC<CR>
 " buffer keymap

@@ -32,7 +32,7 @@ if has('python3')
     let g:python3_host_prog="/usr/bin/python3"
 elseif has('python2')
     set pyxversion=2
-    let g:python2_host_prog="/usr/bin/python2"
+    let g:python_host_prog="/usr/bin/python2"
 endif
 
 let s:vimrc_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
