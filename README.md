@@ -8,6 +8,7 @@ ln -s .config/nvim/init.vim ~/.vimrc
 ```
 
 ### depends
+* python-neovim
 * node & npm
 * the_silver_searcher
 * ripgrep
@@ -28,6 +29,7 @@ ln -s .config/nvim/init.vim ~/.vimrc
 | \<space>r       | ranger                    |
 | \<space>y       | coc yank                  |
 | \<space>a       | coc explorer              |
+| \<leader>j      | call jumps andd select    |
 | \<leader>t      | coc-translator popup      |
 | \<leader>e      | coc-translator echo       |
 | \<leader>r      | coc-translator replace    |
