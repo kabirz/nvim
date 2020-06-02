@@ -31,9 +31,6 @@ command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
 
 [[plugins]]
 repo = 'francoiscabrol/ranger.vim'
-hook_add = '''
-map <silent><space>r :Ranger<CR>
-'''
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
@@ -41,14 +38,15 @@ merge = 0
 rev = 'release'
 hook_add = '''
 let g:coc_global_extensions = [
+	\'coc-cmake',
 	\'coc-css',
-	\'coc-emmet',
 	\'coc-explorer',
 	\'coc-flutter',
 	\'coc-git',
 	\'coc-gitignore',
 	\'coc-go',
 	\'coc-html',
+	\'coc-highlight',
 	\'coc-json',
 	\'coc-lists',
 	\'coc-pairs',
@@ -56,13 +54,14 @@ let g:coc_global_extensions = [
 	\'coc-python',
 	\'coc-rls',
 	\'coc-sourcekit',
-	\'coc-stylelint',
+	\'coc-snippets',
 	\'coc-tailwindcss',
 	\'coc-translator',
 	\'coc-tslint',
 	\'coc-tsserver',
 	\'coc-vimlsp',
 	\'coc-yank',
+	\'coc-zi',
 	\]
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<CR>
 noremap <silent><space>a :<C-U><C-R>=printf("CocCommand explorer %s", expand('%:p:h'))<CR><CR>
@@ -75,6 +74,11 @@ nmap <leader>e <Plug>(coc-translator-ev)
 " replace
 nmap <leader>r <Pluh>(coc-translator-r)
 nmap <leader>r <Plug>(coc-translator-rv)"
+"python
+nnoremap <silent> <space>b :<C-u>CocCommand python.execInTerminal<CR>
+"format
+vmap <leader>F  <Plug>(coc-format-selected)
+nmap <leader>F  <Plug>(coc-format-selected)
 '''
 
 [[plugins]]
@@ -135,6 +139,7 @@ repo = 'sheerun/vim-polyglot'
 
 [[plugins]] # cmake
 repo = 'huleiak47/vim-cmake-complete'
+if = 0
 
 [[plugins]] # startup
 repo = 'mhinz/vim-startify'

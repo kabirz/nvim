@@ -26,7 +26,7 @@ ln -s .config/nvim/init.vim ~/.vimrc
 | \<space>c       | close vim                 |
 | \<C-p>          | fzf                       |
 | \<C-f>          | ag                        |
-| \<space>r       | ranger                    |
+| \<leader>f      | ranger                    |
 | \<space>y       | coc yank                  |
 | \<space>a       | coc explorer              |
 | \<leader>j      | call jumps andd select    |
