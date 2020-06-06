@@ -14,14 +14,15 @@ let g:airline_theme="badwolf"
 [[plugins]] 
 repo = 'junegunn/vim-easy-align'
 
-[[plugins]] 
-repo = 'junegunn/fzf'
-build = './install --all'
-merged = '0'
+#[[plugins]]
+#repo = 'junegunn/fzf'
+#build = './install --all'
+#merged = '0'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
-depends = 'fzf'
+# install with package manager
+#depends = 'fzf'
 hook_add = '''
 noremap <silent><C-p> :FZF<CR>
 noremap <silent><C-f> :Ag<CR>
@@ -38,6 +39,7 @@ merge = 0
 rev = 'release'
 hook_add = '''
 let g:coc_global_extensions = [
+	\'coc-ccls',
 	\'coc-cmake',
 	\'coc-css',
 	\'coc-explorer',
@@ -79,6 +81,9 @@ nnoremap <silent> <space>b :<C-u>CocCommand python.execInTerminal<CR>
 "format
 vmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
+"coc-ccls
+nmap <silent> <M-d> <Plug>(coc-definition)
+nmap <silent> <M-r> <Plug>(coc-references)
 '''
 
 [[plugins]]
