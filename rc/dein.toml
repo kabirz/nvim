@@ -13,20 +13,29 @@ let g:airline_theme="badwolf"
 
 [[plugins]] 
 repo = 'junegunn/vim-easy-align'
+hook_add = '''
+vmap <leader>a <Plug>(EasyAlign)
+nmap <leader>a <Plug>(EasyAlign)
+if !exists('g:easy_align_delimiters')
+	  let g:easy_align_delimiters = {}
+endif
+let g:easy_align_delimiters['#'] = {'pattern': '#', 'ignore_groups': ['String']}
+'''
 
-#[[plugins]]
-#repo = 'junegunn/fzf'
-#build = './install --all'
-#merged = '0'
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = '0'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 # install with package manager
-#depends = 'fzf'
+depends = 'fzf'
 hook_add = '''
 noremap <silent><C-p> :FZF<CR>
 noremap <silent><C-f> :Ag<CR>
 command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
+noremap <silent><leader>j :MRU<CR>
 '''
 
 
@@ -82,8 +91,12 @@ nnoremap <silent> <space>b :<C-u>CocCommand python.execInTerminal<CR>
 vmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
 "coc-ccls
-nmap <silent> <M-d> <Plug>(coc-definition)
-nmap <silent> <M-r> <Plug>(coc-references)
+set updatetime=100
+nmap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
+nmap <silent> gr :call CocActionAsync('jumpReferences')<CR>
+nmap <silent> gy :call CocActionAsync('jumpTypeDefinition')<CR
+nmap <silent> gi :call CocActionAsync('jumpImplementation')<CR>
+nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
 '''
 
 [[plugins]]

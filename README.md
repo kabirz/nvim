@@ -27,6 +27,8 @@ ln -s .config/nvim/init.vim ~/.vimrc
 | \<C-p>          | fzf                       |
 | \<C-f>          | ag                        |
 | \<leader>f      | ranger                    |
+| \<leader>a      | easyalgin                 |
+| \<leader>j      | MRU                       |
 | \<space>y       | coc yank                  |
 | \<space>a       | coc explorer              |
 | \<leader>j      | call jumps andd select    |
@@ -49,6 +51,9 @@ ln -s .config/nvim/init.vim ~/.vimrc
 | bh              | :bnext                    |
 | bl              | :bprevious                |
 | bp              | change dirctory to file   |
+| gd              | coc defination            |
+| gr              | coc reference             |
+| gi              | coc implement             |
 | tf              | :tabfirst                 |
 | te              | :tablast                  |
 | th              | :tabnext                  |
