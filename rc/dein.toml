@@ -94,7 +94,7 @@ nmap <leader>F  <Plug>(coc-format-selected)
 set updatetime=100
 nmap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
 nmap <silent> gr :call CocActionAsync('jumpReferences')<CR>
-nmap <silent> gy :call CocActionAsync('jumpTypeDefinition')<CR
+nmap <silent> gy :call CocActionAsync('jumpTypeDefinition')<CR>
 nmap <silent> gi :call CocActionAsync('jumpImplementation')<CR>
 nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
 '''
@@ -174,4 +174,10 @@ repo = 'plasticboy/vim-markdown'
 hook_add = '''
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_folding_disabled = 1
+'''
+
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+hook_add = '''
+runtime local_clang-format.vim
 '''

@@ -30,7 +30,7 @@ set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 if has('python3')
     set pyxversion=3
     let g:python3_host_prog="/usr/bin/python3"
-elseif has('python2')
+elseif has('python')
     set pyxversion=2
     let g:python_host_prog="/usr/bin/python2"
 endif
