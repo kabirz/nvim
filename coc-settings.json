@@ -1,12 +1,52 @@
 {
 	"languageserver": {
+		/*
+		"clangd": {
+			"command": "clangd",
+			"rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+			"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+		},
+		"cquery": {
+			"command": "cquery",
+			"args": ["--log-file=/tmp/cq.log"],
+			"filetypes": ["c", "cc", "cpp", "c++"],
+			"rootPatterns": ["compile_flags.txt", "compile_commands.json", ".git/", ".hg/"],
+			"initializationOptions": {
+				"cacheDirectory": "/tmp/cquery"
+			}
+		},
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod"],
+			"disableWorkspaceFolders": true,
+			"filetypes": ["go"]
+		},
+		*/
+		// npm i -g bash-language-server or pacman -S bash-language-server
+		"bash": {
+			"command": "bash-language-server",
+			"args": ["start"],
+			"filetypes": ["sh"],
+			"ignoredRootPaths": ["~"]
+		},
+		// pip install cmake-language-server --user
+		"cmake": {
+			"command": "cmake-language-server",
+			"filetypes": ["cmake"],
+			"rootPatterns": [
+				"build/"
+			],
+			"initializationOptions": {
+				"buildDirectory": "build"
+			}
+		},
 		"ccls": {
 			"command": "ccls",
 			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootPatterns": [".ccls-root", "compile_commands.json"],
+			"rootPatterns": [".ccls",".ccls-root", "compile_commands.json", ".git/", ".hg/"],
 			"initializationOptions": {
 				"cache": {
-					"directory": ".ccls-cache"
+					"directory": "~/.cache/.ccls-cache"
 				},
 				"client": {
 					"snippetSupport": true

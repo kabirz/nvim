@@ -49,7 +49,7 @@ rev = 'release'
 hook_add = '''
 let g:coc_global_extensions = [
 	\'coc-ccls',
-	\'coc-cmake',
+	"\'coc-clangd',
 	\'coc-css',
 	\'coc-explorer',
 	\'coc-flutter',
@@ -84,7 +84,7 @@ nmap <leader>e <Plug>(coc-translator-e)
 nmap <leader>e <Plug>(coc-translator-ev)
 " replace
 nmap <leader>r <Pluh>(coc-translator-r)
-nmap <leader>r <Plug>(coc-translator-rv)"
+nmap <leader>r <Plug>(coc-translator-rv)
 "python
 nnoremap <silent> <space>b :<C-u>CocCommand python.execInTerminal<CR>
 "format
@@ -97,6 +97,7 @@ nmap <silent> gr :call CocActionAsync('jumpReferences')<CR>
 nmap <silent> gy :call CocActionAsync('jumpTypeDefinition')<CR>
 nmap <silent> gi :call CocActionAsync('jumpImplementation')<CR>
 nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
+let g:markdown_fenced_languages = ['vim', 'help']
 '''
 
 [[plugins]]
@@ -121,9 +122,6 @@ noremap <silent><space>fg :<C-U><C-R>=printf("Leaderf! gtags -g %s --auto-jump",
 noremap <silent><space>fo :<C-U><C-R>=printf("Leaderf! gtags --by-context --auto-jump")<CR><CR>
 noremap <silent><space>ff :<C-U><C-R>=printf("Leaderf! rg  %s", expand("<cword>"))<CR><CR>
 '''
-
-[[plugins]] # c/c++ header
-repo = 'Shougo/neoinclude.vim'
 
 [[plugins]] # colorscheme
 repo = 'dracula/vim'
@@ -155,10 +153,6 @@ let g:rainbow_active = 1
 [[plugins]] #syntax
 repo = 'sheerun/vim-polyglot'
 
-[[plugins]] # cmake
-repo = 'huleiak47/vim-cmake-complete'
-if = 0
-
 [[plugins]] # startup
 repo = 'mhinz/vim-startify'
 
@@ -181,3 +175,5 @@ repo = 'rhysd/vim-clang-format'
 hook_add = '''
 runtime local_clang-format.vim
 '''
+[[plugins]]
+repo = 'wsdjeg/dein-ui.vim'
