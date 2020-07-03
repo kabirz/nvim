@@ -46,7 +46,7 @@
 			"rootPatterns": [".ccls",".ccls-root", "compile_commands.json", ".git/", ".hg/"],
 			"initializationOptions": {
 				"cache": {
-					"directory": "~/.cache/.ccls-cache"
+					"directory": "/tmp/ccls/.ccls-cache"
 				},
 				"client": {
 					"snippetSupport": true

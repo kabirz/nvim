@@ -52,6 +52,7 @@ let g:coc_global_extensions = [
 	\'coc-explorer',
 	\'coc-flutter',
 	\'coc-git',
+	\'coc-gitignore',
 	\'coc-go',
 	\'coc-html',
 	\'coc-highlight',
@@ -89,10 +90,15 @@ vmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
 "coc-ccls
 set updatetime=100
-nmap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
-nmap <silent> gr :call CocActionAsync('jumpReferences')<CR>
-nmap <silent> gy :call CocActionAsync('jumpTypeDefinition')<CR>
-nmap <silent> gi :call CocActionAsync('jumpImplementation')<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gw <Plug>(coc-diagnostic-next)
+nmap <silent> gW <Plug>(coc-diagnostic-prev)
+nmap <silent> ge <Plug>(coc-diagnostic-next-error)
+nmap <silent> gE <Plug>(coc-diagnostic-prev-error)
+nmap <silent> g[ <Plug>(coc-format)
 nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
 let g:markdown_fenced_languages = ['vim', 'help']
 '''
