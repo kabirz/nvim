@@ -31,6 +31,7 @@ ln -s .config/nvim/init.vim ~/.vimrc
 | \<leader>j      | MRU                       |
 | \<space>y       | coc yank                  |
 | \<space>a       | coc explorer              |
+| \<space>by      | CocList tasks             |
 | \<leader>j      | call jumps andd select    |
 | \<leader>t      | coc-translator popup      |
 | \<leader>e      | coc-translator echo       |
@@ -46,6 +47,12 @@ ln -s .config/nvim/init.vim ~/.vimrc
 | \<space>ff      | leader rg                 |
 | \<space>fm      | leader mru current        |
 | \<space>fh      | leader mru all history    |
+| \<space>Fr      | file run                  |
+| \<space>Fb      | file build                |
+| \<space>cb      | cmake build               |
+| \<space>ca      | cmake build and run       |
+| \<space>cr      | cmake run                 |
+| \<space>cc      | cmake clean               |
 | bf              | :bfirst                   |
 | be              | :blast                    |
 | bh              | :bnext                    |

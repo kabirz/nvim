@@ -55,6 +55,8 @@
 		}
 	},
 	"http.proxy": "http://child-prc.intel.com:913",
+	"python.linting.pylintEnabled": true,
+	"python.linting.enabled": true,
 	"explorer.width": 36,
 	"explorer.icon.enableVimDevicons": true,
 	"explorer.previewAction.onHover": true,

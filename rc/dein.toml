@@ -43,6 +43,21 @@ noremap <silent><leader>j :MRU<CR>
 repo = 'francoiscabrol/ranger.vim'
 
 [[plugins]]
+repo = 'skywind3000/asynctasks.vim'
+
+[[plugins]]
+repo = 'skywind3000/asyncrun.vim'
+hook_add = '''
+let g:asyncrun_open = 6
+noremap <silent><space>cb :AsyncTask cmake-build<CR>
+noremap <silent><space>cr :AsyncTask cmake-run<CR>
+noremap <silent><space>ca :AsyncTask cmake-build-and-run<CR>
+noremap <silent><space>cc :AsyncTask cmake-clean<CR>
+noremap <silent><space>Fb :AsyncTask file-build<CR>
+noremap <silent><space>Fr :AsyncTask file-run<CR>
+'''
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 merge = 0
 rev = 'release'
@@ -59,12 +74,12 @@ let g:coc_global_extensions = [
 	\'coc-json',
 	\'coc-lists',
 	\'coc-pairs',
-	\'coc-pyright',
 	\'coc-python',
 	\'coc-rls',
 	\'coc-sourcekit',
 	\'coc-snippets',
 	\'coc-tailwindcss',
+	\'coc-tasks',
 	\'coc-translator',
 	\'coc-tslint',
 	\'coc-tsserver',
@@ -83,8 +98,8 @@ nmap <leader>e <Plug>(coc-translator-ev)
 " replace
 nmap <leader>r <Pluh>(coc-translator-r)
 nmap <leader>r <Plug>(coc-translator-rv)
-"python
-nnoremap <silent> <space>b :<C-u>CocCommand python.execInTerminal<CR>
+"tasks
+nmap <silent> <space>by :<C-u>CocList tasks<CR>
 "format
 vmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
