@@ -170,6 +170,12 @@ repo = 'honza/vim-snippets'
 repo = 'luochen1990/rainbow'
 hook_add = '''
 let g:rainbow_active = 1
+" fix conflict with cmake highlight
+let g:rainbow_conf = {
+   \'separately': {
+       \'cmake': 0,
+   \}
+\}
 '''
 
 [[plugins]] #syntax
@@ -206,4 +212,7 @@ rev = 'nvim-v0.4.3'
 hook_add = '''
 nnoremap <silent> <leader>lg :LazyGit<CR>
 '''
+
+[[plugins]]
+repo = 'pboettch/vim-cmake-syntax'
 
