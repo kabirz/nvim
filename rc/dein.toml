@@ -214,5 +214,7 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 '''
 
 [[plugins]]
-repo = 'pboettch/vim-cmake-syntax'
-
+repo = 'dhruvasagar/vim-zoom'
+hook_add = '''
+nmap <space>m <Plug>(zoom-toggle)
+'''
