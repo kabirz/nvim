@@ -55,6 +55,10 @@ noremap <silent><space>ca :AsyncTask cmake-build-and-run<CR>
 noremap <silent><space>cc :AsyncTask cmake-clean<CR>
 noremap <silent><space>Fb :AsyncTask file-build<CR>
 noremap <silent><space>Fr :AsyncTask file-run<CR>
+noremap <silent><space>wb :AsyncTask west-build<CR>
+noremap <silent><space>wr :AsyncTask west-rebuild<CR>
+noremap <silent><space>wf :AsyncTask west-flash<CR>
+noremap <silent><space>q :ccl<CR>
 '''
 
 [[plugins]]
@@ -195,3 +199,11 @@ runtime local_clang-format.vim
 '''
 [[plugins]]
 repo = 'wsdjeg/dein-ui.vim'
+
+[[plugins]]
+repo = 'kdheepak/lazygit.nvim'
+rev = 'nvim-v0.4.3'
+hook_add = '''
+nnoremap <silent> <leader>lg :LazyGit<CR>
+'''
+
