@@ -23,14 +23,8 @@ let g:easy_align_delimiters['#'] = {'pattern': '#', 'ignore_groups': ['String']}
 '''
 
 [[plugins]]
-repo = 'junegunn/fzf'
-build = './install --all'
-merged = '0'
-
-[[plugins]]
 repo = 'junegunn/fzf.vim'
 # install with package manager
-depends = 'fzf'
 hook_add = '''
 noremap <silent><C-p> :FZF<CR>
 noremap <silent><C-f> :Ag<CR>
