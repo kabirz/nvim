@@ -26,6 +26,7 @@ filetype off  " required!
 set nocompatible
 filetype plugin indent on     " required!
 set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set shell=/usr/bin/zsh
 
 if has('python3')
     set pyxversion=3
