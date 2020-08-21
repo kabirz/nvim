@@ -229,10 +229,11 @@ let g:floaterm_width=0.7
 let g:floaterm_keymap_toggle = '<space>tt'
 let g:floaterm_keymap_next = '<space>tn'
 let g:floaterm_keymap_prev = '<space>tm'
-nmap <silent><space>tp : FloatermNew ipython<CR>
+nmap <silent><space>tp : FloatermNew ipython3<CR>
 nmap <silent><space>tr : FloatermNew ranger<CR>
 nmap <silent><space>tf : FloatermNew fzf<CR>
 nmap <silent><space>tl : FloatermNew lazygit<CR>
+nmap <silent><space>tx : FloatermNew xonsh<CR>
 function! s:runner_proc(opts)
   let curr_bufnr = floaterm#curr()
   if has_key(a:opts, 'silent') && a:opts.silent == 1
@@ -254,3 +255,12 @@ let g:asynctasks_term_pos="floaterm"
 
 [[plugins]]
 repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-speeddating'
