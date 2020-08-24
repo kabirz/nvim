@@ -140,7 +140,7 @@ noremap <silent><space>ff :<C-U><C-R>=printf("Leaderf! rg  %s", expand("<cword>"
 '''
 
 [[plugins]] # colorscheme
-repo = 'flazz/vim-colorschemes'
+repo = 'dracula/vim'
 hook_add = '''
 colorscheme dracula
 '''
@@ -264,3 +264,25 @@ repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'tpope/vim-speeddating'
+
+[[plugins]]
+repo = 'itchyny/calendar.vim'
+
+[[plugins]]
+repo = 'liuchengxu/vista.vim'
+hook_add = '''
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_default_executive = 'ctags'
+let g:vista_ctags_cmd = {
+      \ 'haskell': 'hasktags -x -o - -c',
+      \ }
+let g:vista_fzf_preview = ['right:50%']
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+nmap <silent><space>tv : Vista!!<CR>
+'''
+
+[[plugins]]
