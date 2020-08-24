@@ -286,3 +286,21 @@ nmap <silent><space>tv : Vista!!<CR>
 '''
 
 [[plugins]]
+repo = 'liuchengxu/vim-clap'
+build=':Clap install-binary!'
+hook_add = '''
+let g:clap_theme = 'material_design_dark'
+let height = &lines / 3
+let width = float2nr(&columns - (&columns * 2 / 10))
+let col = float2nr((&columns - width) / 2)
+nmap <silent> zf : Clap files<CR>
+nmap <silent> zb : Clap buffers<CR>
+nmap <silent> zl : Clap blines<CR>
+nmap <silent> zg : Clap git_diff_files<CR>
+nmap <silent> zr : Clap grep<CR>
+nmap <silent> zv : Clap grep ++query=<cword><CR>
+vmap <silent> zv : Clap grep ++query=@visual<CR>
+nmap <silent> zR : Clap grep2<CR>
+nmap <silent> zc : Clap colors<CR>
+nmap <silent> zy : Clap yanks<CR>
+'''
