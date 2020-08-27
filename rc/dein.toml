@@ -64,6 +64,7 @@ let g:coc_global_extensions = [
 	\'coc-css',
 	\'coc-explorer',
 	\'coc-flutter',
+	\'coc-fzf-preview',
 	\'coc-git',
 	\'coc-gitignore',
 	\'coc-go',
@@ -72,6 +73,7 @@ let g:coc_global_extensions = [
 	\'coc-json',
 	\'coc-lists',
 	\'coc-pairs',
+	\'coc-prettier',
 	\'coc-python',
 	\'coc-rls',
 	\'coc-sourcekit',
@@ -83,6 +85,7 @@ let g:coc_global_extensions = [
 	\'coc-tsserver',
 	\'coc-vimlsp',
 	\'coc-yank',
+	\'coc-yaml',
 	\'coc-zi',
 	\]
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<CR>
@@ -114,6 +117,21 @@ nmap <silent> gE <Plug>(coc-diagnostic-prev-error)
 nmap <silent> g[ <Plug>(coc-format)
 nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
 let g:markdown_fenced_languages = ['vim', 'help']
+"key for fzf
+nmap <silent> <space>dc :<C-u>CocCommand fzf-preview.Ctags<CR>
+nmap <silent> <space>dj :<C-u>CocCommand fzf-preview.Jumps<CR>
+nmap <silent> <space>db :<C-u>CocCommand fzf-preview.buffers<CR>
+nmap <silent> <space>dB :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nmap <silent> <space>dgl :<C-u>CocCommand fzf-preview.GitLogs<CR>
+nmap <silent> <space>dgf :<C-u>CocCommand fzf-preview.GitFiles<CR>
+nmap <silent> <space>dgs :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nmap <silent> <space>dgt :<C-u>CocCommand fzf-preview.GitStashes<CR>
+nmap <silent> <space>dga :<C-u>CocCommand fzf-preview.GitActions<CR>
+nmap <silent> <space>dmu :<C-u>CocCommand fzf-preview.MruFiles<CR>
+nmap <silent> <space>dmr :<C-u>CocCommand fzf-preview.MrwFiles<CR>
+nmap <silent> <space>dmo :<C-u>CocCommand fzf-preview.OldFiles<CR>
+nmap <silent> <space>dq :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nmap <silent> <space>df :<C-U><C-R>=printf("CocCommand fzf-preview.ProjectGrep %s", expand("<cword>"))<CR><CR>
 '''
 
 [[plugins]]
