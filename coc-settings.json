@@ -55,9 +55,7 @@
 			}
 		}
 	},
-	"http.proxy": "http://child-prc.intel.com:913",
 
-	"codeLens.separator": "👓",
 	"codeLens.enable": true,
 	"suggest.enablePreselect": true,
 	"suggest.enablePreview": true,

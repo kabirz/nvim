@@ -315,10 +315,20 @@ nmap <silent> zf : Clap files<CR>
 nmap <silent> zb : Clap buffers<CR>
 nmap <silent> zl : Clap blines<CR>
 nmap <silent> zg : Clap git_diff_files<CR>
+nmap <silent> zh : Clap history<CR>
 nmap <silent> zr : Clap grep<CR>
 nmap <silent> zv : Clap grep ++query=<cword><CR>
 vmap <silent> zv : Clap grep ++query=@visual<CR>
 nmap <silent> zR : Clap grep2<CR>
-nmap <silent> zc : Clap colors<CR>
+nmap <silent> zd : Clap command<CR>
 nmap <silent> zy : Clap yanks<CR>
+nmap <silent> z: : Clap hist:<CR>
+nmap <silent> z/ : Clap hist/<CR>
+'''
+
+[[plugins]]
+repo = 'APZelos/blamer.nvim'
+hook_add = '''
+let g:blamer_enabled = 1
+let g:blamer_delay = 50
 '''
