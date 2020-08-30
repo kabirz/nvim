@@ -2,7 +2,14 @@
 repo = 'vim-airline/vim-airline'
 hook_add = '''
 let g:airline_powerline_fonts=1
+let w:airline_disable_statusline = 1
 let g:airline#extensions#tabline#enabled=1
+'''
+
+[[plugins]] # airline themes
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+let g:airline_theme = 'badwolf'
 '''
 
 [[plugins]] # status bar
@@ -198,11 +205,6 @@ repo = 'mhinz/vim-startify'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
-hook_add = '''
-let g:webdevicons_enable_nerdtree = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsNerdTreeBeforeGlyphPadding = ' '
-'''
 
 [[plugins]]
 repo = 'junegunn/vim-emoji'
