@@ -5,10 +5,10 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 '''
 
-[[plugins]] # airline
-repo = 'vim-airline/vim-airline-themes'
+[[plugins]] # status bar
+repo = 'hardcoreplayers/spaceline.vim'
 hook_add = '''
-let g:airline_theme="badwolf"
+let g:spaceline_seperate_style = 'arrow'
 '''
 
 [[plugins]] 
@@ -120,13 +120,13 @@ let g:markdown_fenced_languages = ['vim', 'help']
 "key for fzf
 nmap <silent> <space>dc :<C-u>CocCommand fzf-preview.Ctags<CR>
 nmap <silent> <space>dj :<C-u>CocCommand fzf-preview.Jumps<CR>
-nmap <silent> <space>db :<C-u>CocCommand fzf-preview.buffers<CR>
+nmap <silent> <space>db :<C-u>CocCommand fzf-preview.Buffers<CR>
 nmap <silent> <space>dB :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nmap <silent> <space>dgl :<C-u>CocCommand fzf-preview.GitLogs<CR>
-nmap <silent> <space>dgf :<C-u>CocCommand fzf-preview.GitFiles<CR>
-nmap <silent> <space>dgs :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nmap <silent> <space>dgt :<C-u>CocCommand fzf-preview.GitStashes<CR>
-nmap <silent> <space>dga :<C-u>CocCommand fzf-preview.GitActions<CR>
+nmap <silent> <space>gl :<C-u>CocCommand fzf-preview.GitLogs<CR>
+nmap <silent> <space>gf :<C-u>CocCommand fzf-preview.GitFiles<CR>
+nmap <silent> <space>gs :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nmap <silent> <space>gt :<C-u>CocCommand fzf-preview.GitStashes<CR>
+nmap <silent> <space>ga :<C-u>CocCommand fzf-preview.GitActions<CR>
 nmap <silent> <space>dmu :<C-u>CocCommand fzf-preview.MruFiles<CR>
 nmap <silent> <space>dmr :<C-u>CocCommand fzf-preview.MrwFiles<CR>
 nmap <silent> <space>dmo :<C-u>CocCommand fzf-preview.OldFiles<CR>
@@ -244,6 +244,7 @@ build = './install_gadget.py --enable-c --enable-python'
 repo = 'voldikss/vim-floaterm'
 hook_add = '''
 let g:floaterm_width=0.7
+let g:floaterm_height=0.8
 let g:floaterm_keymap_toggle = '<space>tt'
 let g:floaterm_keymap_next = '<space>tn'
 let g:floaterm_keymap_prev = '<space>tm'
@@ -285,6 +286,9 @@ repo = 'tpope/vim-speeddating'
 
 [[plugins]]
 repo = 'itchyny/calendar.vim'
+
+#[[plugins]]
+#repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
@@ -328,6 +332,7 @@ nmap <silent> z/ : Clap hist/<CR>
 
 [[plugins]]
 repo = 'APZelos/blamer.nvim'
+if = 0
 hook_add = '''
 let g:blamer_enabled = 1
 let g:blamer_delay = 50
