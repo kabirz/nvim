@@ -84,6 +84,7 @@ let g:coc_global_extensions = [
 	\'coc-prettier',
 	\'coc-python',
 	\'coc-rls',
+	\'coc-rust-analyzer',
 	\'coc-sourcekit',
 	\'coc-snippets',
 	\'coc-tailwindcss',

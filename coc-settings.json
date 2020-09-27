@@ -109,5 +109,6 @@
 	"explorer.file.column.git.icon.ignored": "",
 	"explorer.file.column.git.icon.unmerged": "◦",
 	"explorer.file.column.git.icon.untracked": "",
+	"rust-analyzer.serverPath": "~/.local/bin/rust-analyzer-linux",
 	"explorer.icon.enableNerdfont": true
 }
