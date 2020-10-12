@@ -123,8 +123,8 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<CR>
-noremap <silent><space>a :<C-U><C-R>=printf("CocCommand explorer %s", expand('%:p:h'))<CR><CR>
+nnoremap <silent> <Space>y :<C-u>CocList -A --normal yank<CR>
+noremap <silent><Space>a :<C-U><C-R>=printf("CocCommand explorer %s", expand('%:p:h'))<CR><CR>
 " popup
 nmap <leader>t <Plug>(coc-translator-p)
 vmap <leader>t <Plug>(coc-translator-pv)
@@ -135,7 +135,7 @@ nmap <leader>e <Plug>(coc-translator-ev)
 nmap <leader>r <Pluh>(coc-translator-r)
 nmap <leader>r <Plug>(coc-translator-rv)
 "tasks
-"nmap <silent> <space>by :<C-u>CocList tasks<CR>
+"nmap <silent> <Space>by :<C-u>CocList tasks<CR>
 "format
 vmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
@@ -153,27 +153,27 @@ nmap <silent> g[ <Plug>(coc-format)
 nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
 let g:markdown_fenced_languages = ['vim', 'help']
 "key for fzf
-nmap <silent> <space>dc :<C-u>CocCommand fzf-preview.Ctags<CR>
-nmap <silent> <space>dj :<C-u>CocCommand fzf-preview.Jumps<CR>
-nmap <silent> <space>db :<C-u>CocCommand fzf-preview.Buffers<CR>
-nmap <silent> <space>dB :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nmap <silent> <space>gl :<C-u>CocCommand fzf-preview.GitLogs<CR>
-nmap <silent> <space>gf :<C-u>CocCommand fzf-preview.GitFiles<CR>
-nmap <silent> <space>gs :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nmap <silent> <space>gt :<C-u>CocCommand fzf-preview.GitStashes<CR>
-nmap <silent> <space>ga :<C-u>CocCommand fzf-preview.GitActions<CR>
-nmap <silent> <space>dmu :<C-u>CocCommand fzf-preview.MruFiles<CR>
-nmap <silent> <space>dmr :<C-u>CocCommand fzf-preview.MrwFiles<CR>
-nmap <silent> <space>dmo :<C-u>CocCommand fzf-preview.OldFiles<CR>
-nmap <silent> <space>dq :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nmap <silent> <space>df :<C-U><C-R>=printf("CocCommand fzf-preview.ProjectGrep %s", expand("<cword>"))<CR><CR>
+nmap <silent> <Space>bc :<C-u>CocCommand fzf-preview.Ctags<CR>
+nmap <silent> <Space>bj :<C-u>CocCommand fzf-preview.Jumps<CR>
+nmap <silent> <Space>bb :<C-u>CocCommand fzf-preview.Buffers<CR>
+nmap <silent> <Space>bB :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nmap <silent> <Space>gl :<C-u>CocCommand fzf-preview.GitLogs<CR>
+nmap <silent> <Space>gf :<C-u>CocCommand fzf-preview.GitFiles<CR>
+nmap <silent> <Space>gs :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nmap <silent> <Space>gt :<C-u>CocCommand fzf-preview.GitStashes<CR>
+nmap <silent> <Space>ga :<C-u>CocCommand fzf-preview.GitActions<CR>
+nmap <silent> <Space>bu :<C-u>CocCommand fzf-preview.MruFiles<CR>
+nmap <silent> <Space>bw :<C-u>CocCommand fzf-preview.MrwFiles<CR>
+nmap <silent> <Space>bo :<C-u>CocCommand fzf-preview.OldFiles<CR>
+nmap <silent> <Space>bq :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nmap <silent> <Space>bf :<C-U><C-R>=printf("CocCommand fzf-preview.ProjectGrep %s", expand("<cword>"))<CR><CR>
 
 " Rust analyzer bindings:
-nnoremap <silent>rar  :<C-u>CocCommand rust-analyzer.run<CR>
-nnoremap <silent>raem :<C-u>CocCommand rust-analyzer.expandMacro<CR>
-nnoremap <silent>rare :<C-u>CocCommand rust-analyzer.reload<CR>
-nnoremap <silent>ras  :<C-u>CocCommand rust-analyzer.analyzerStatus<CR>
-nnoremap <silent>rau  :<C-u>CocCommand rust-analyzer.upgrade<CR>
+nnoremap <silent><LocalLeader>rr :<C-u>CocCommand rust-analyzer.run<CR>
+nnoremap <silent><LocalLeader>re :<C-u>CocCommand rust-analyzer.expandMacro<CR>
+nnoremap <silent><LocalLeader>rl :<C-u>CocCommand rust-analyzer.reload<CR>
+nnoremap <silent><LocalLeader>ra :<C-u>CocCommand rust-analyzer.analyzerStatus<CR>
+nnoremap <silent><LocalLeader>ru :<C-u>CocCommand rust-analyzer.upgrade<CR>
 '''
 
 [[plugins]]
@@ -186,17 +186,17 @@ let g:Lf_PreviewResult = {'Function':0, 'Colorscheme':1}
 let g:Lf_GtagsAutoGenerate = 1
 let g:Lf_Gtagslabel = 'native-pygments'
 let g:Lf_ReverseOrder = 0
-noremap <silent><space>fi :Leaderf! file<CR>
-noremap <silent><space>fu :Leaderf! function<CR>
-noremap <silent><space>fm :Leaderf! mru --cwd<CR>
-noremap <silent><space>fh :Leaderf! mru<CR>
-noremap <silent><space>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <silent><space>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <silent><space>fp :<C-U><C-R>=printf("Leaderf! gtags --recall")<CR><CR>
-noremap <silent><space>fs :<C-U><C-R>=printf("Leaderf! gtags -s %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <silent><space>fg :<C-U><C-R>=printf("Leaderf! gtags -g %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <silent><space>fo :<C-U><C-R>=printf("Leaderf! gtags --by-context --auto-jump")<CR><CR>
-noremap <silent><space>ff :<C-U><C-R>=printf("Leaderf! rg  %s", expand("<cword>"))<CR><CR>
+noremap <silent><Space>fi :Leaderf! file<CR>
+noremap <silent><Space>fu :Leaderf! function<CR>
+noremap <silent><Space>fm :Leaderf! mru --cwd<CR>
+noremap <silent><Space>fh :Leaderf! mru<CR>
+noremap <silent><Space>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <silent><Space>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <silent><Space>fp :<C-U><C-R>=printf("Leaderf! gtags --recall")<CR><CR>
+noremap <silent><Space>fs :<C-U><C-R>=printf("Leaderf! gtags -s %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <silent><Space>fg :<C-U><C-R>=printf("Leaderf! gtags -g %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <silent><Space>fo :<C-U><C-R>=printf("Leaderf! gtags --by-context --auto-jump")<CR><CR>
+noremap <silent><Space>ff :<C-U><C-R>=printf("Leaderf! rg  %s", expand("<cword>"))<CR><CR>
 '''
 
 [[plugins]] # colorscheme
@@ -276,7 +276,7 @@ nnoremap <silent> <leader>lg :LazyGit<CR>
 [[plugins]]
 repo = 'dhruvasagar/vim-zoom'
 hook_add = '''
-nmap <space>m <Plug>(zoom-toggle)
+nmap <Space>m <Plug>(zoom-toggle)
 '''
 
 [[plugins]]
@@ -289,14 +289,14 @@ hook_add = '''
 let g:floaterm_width=0.4
 let g:floaterm_height=0.4
 let g:floaterm_position="bottomright"
-let g:floaterm_keymap_toggle = '<space>tt'
-let g:floaterm_keymap_next = '<space>tn'
-let g:floaterm_keymap_prev = '<space>tm'
-nmap <silent><space>tp : FloatermNew ipython3<CR>
-nmap <silent><space>tr : FloatermNew ranger<CR>
-nmap <silent><space>tf : FloatermNew fzf<CR>
-nmap <silent><space>tl : FloatermNew lazygit<CR>
-nmap <silent><space>tx : FloatermNew xonsh<CR>
+let g:floaterm_keymap_toggle = '<Space>tt'
+let g:floaterm_keymap_next = '<Space>tn'
+let g:floaterm_keymap_prev = '<Space>tm'
+nmap <silent><Space>tp : FloatermNew ipython3<CR>
+nmap <silent><Space>tr : FloatermNew ranger<CR>
+nmap <silent><Space>tf : FloatermNew fzf<CR>
+nmap <silent><Space>tl : FloatermNew lazygit<CR>
+nmap <silent><Space>tx : FloatermNew xonsh<CR>
 function! s:runner_proc(opts)
   let curr_bufnr = floaterm#curr()
   if has_key(a:opts, 'silent') && a:opts.silent == 1
@@ -384,7 +384,7 @@ let g:vista#renderer#icons = {
 	\ 'default':        "\uf29c"
 	\ }
 
-nmap <silent><space>tv : Vista!!<CR>
+nmap <silent><Space>tv : Vista!!<CR>
 '''
 repo = 'liuchengxu/vim-clap'
 build=':Clap install-binary!'
@@ -395,15 +395,21 @@ let width = float2nr(&columns - (&columns * 2 / 10))
 let col = float2nr((&columns - width) / 2)
 nmap <silent> <Space>zf : Clap files<CR>
 nmap <silent> <Space>zb : Clap buffers<CR>
+nmap <silent> <Space>zC : Clap bcommits<CR>
+nmap <silent> <Space>zc : Clap commits<CR>
 nmap <silent> <Space>zl : Clap blines<CR>
 nmap <silent> <Space>zg : Clap git_diff_files<CR>
 nmap <silent> <Space>zh : Clap history<CR>
+nmap <silent> <Space>zj : Clap jumps<CR>
 nmap <silent> <Space>zr : Clap grep<CR>
+nmap <silent> <Space>za : Clap registers<CR>
+nmap <silent> <Space>zm : Clap maps<CR>
 nmap <silent> <Space>zv : Clap grep ++query=<cword><CR>
 vmap <silent> <Space>zv : Clap grep ++query=@visual<CR>
 nmap <silent> <Space>zR : Clap grep2<CR>
 nmap <silent> <Space>zd : Clap command<CR>
 nmap <silent> <Space>zy : Clap yanks<CR>
+nmap <silent> <Space>zw : Clap windows<CR>
 nmap <silent> <Space>z: : Clap hist:<CR>
 nmap <silent> <Space>z/ : Clap hist/<CR>
 '''
@@ -434,11 +440,11 @@ set timeoutlen=500
 
 "space key
 let g:space_map = {}
-let g:space_map.b = { 'name': '+abc',
-    \ 'y': [':CocList', 'coclist'],
-\}
-let g:space_map.c = { 'name': '+Coc',
-\}
+let g:space_map.b = { 'name': '+fzf-preview-option'}
+let g:space_map.g = { 'name': '+fzf-preview-git'}
+let g:space_map.c = { 'name': '+Coc'}
+let g:space_map.f = { 'name': '+Leaderf'}
+let g:space_map.t = { 'name': '+Floaterm'}
 let g:space_map.z = { 'name': '+Clap'}
 call which_key#register('<Space>', "g:space_map")
 
@@ -449,8 +455,9 @@ call which_key#register('\', "g:leader_map")
 
 "local leader key
 let g:localleader_map = {}
-let g:localleader_map.c = {'name': 'AsyncTask cmake'}
-let g:localleader_map.f = {'name': 'AsyncTask file'}
-let g:localleader_map.w = {'name': 'AsyncTask west'}
+let g:localleader_map.c = {'name': '+AsyncTask-cmake'}
+let g:localleader_map.f = {'name': '+AsyncTask-file'}
+let g:localleader_map.r = {'name': '+rust-analyzer'}
+let g:localleader_map.w = {'name': '+AsyncTask-west'}
 call which_key#register(';', "g:localleader_map")
 '''
