@@ -25,7 +25,7 @@ nnoremap <silent>tl :tabnext<CR>
 set pastetoggle=<space>p
 nnoremap <silent><space><space> :set mouse=a <CR>
 " close vim
-noremap <silent><space>c :qa <CR>
+noremap <silent><space>q :qa <CR>
 " auto command
 "set autochdir
 set autowriteall

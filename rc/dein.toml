@@ -51,16 +51,16 @@ repo = 'skywind3000/asynctasks.vim'
 repo = 'skywind3000/asyncrun.vim'
 hook_add = '''
 let g:asyncrun_open = 6
-noremap <silent><space>cb :AsyncTask cmake-build<CR>
-noremap <silent><space>cr :AsyncTask cmake-run<CR>
-noremap <silent><space>ca :AsyncTask cmake-build-and-run<CR>
-noremap <silent><space>cc :AsyncTask cmake-clean<CR>
-noremap <silent><space>Fb :AsyncTask file-build<CR>
-noremap <silent><space>Fr :AsyncTask file-run<CR>
-noremap <silent><space>wb :AsyncTask west-build<CR>
-noremap <silent><space>wr :AsyncTask west-rebuild<CR>
-noremap <silent><space>wf :AsyncTask west-flash<CR>
-noremap <silent><space>q :ccl<CR>
+noremap <silent><LocalLeader>cb :AsyncTask cmake-build<CR>
+noremap <silent><LocalLeader>cr :AsyncTask cmake-run<CR>
+noremap <silent><LocalLeader>ca :AsyncTask cmake-build-and-run<CR>
+noremap <silent><LocalLeader>cc :AsyncTask cmake-clean<CR>
+noremap <silent><LocalLeader>fb :AsyncTask file-build<CR>
+noremap <silent><LocalLeader>fr :AsyncTask file-run<CR>
+noremap <silent><LocalLeader>wb :AsyncTask west-build<CR>
+noremap <silent><LocalLeader>wr :AsyncTask west-rebuild<CR>
+noremap <silent><LocalLeader>wf :AsyncTask west-flash<CR>
+noremap <silent><LocalLeader>q :ccl<CR>
 '''
 
 [[plugins]]
@@ -97,6 +97,32 @@ let g:coc_global_extensions = [
 	\'coc-yaml',
 	\'coc-zi',
 	\]
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<CR>
 noremap <silent><space>a :<C-U><C-R>=printf("CocCommand explorer %s", expand('%:p:h'))<CR><CR>
 " popup
@@ -109,7 +135,7 @@ nmap <leader>e <Plug>(coc-translator-ev)
 nmap <leader>r <Pluh>(coc-translator-r)
 nmap <leader>r <Plug>(coc-translator-rv)
 "tasks
-nmap <silent> <space>by :<C-u>CocList tasks<CR>
+"nmap <silent> <space>by :<C-u>CocList tasks<CR>
 "format
 vmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
@@ -141,6 +167,13 @@ nmap <silent> <space>dmr :<C-u>CocCommand fzf-preview.MrwFiles<CR>
 nmap <silent> <space>dmo :<C-u>CocCommand fzf-preview.OldFiles<CR>
 nmap <silent> <space>dq :<C-u>CocCommand fzf-preview.QuickFix<CR>
 nmap <silent> <space>df :<C-U><C-R>=printf("CocCommand fzf-preview.ProjectGrep %s", expand("<cword>"))<CR><CR>
+
+" Rust analyzer bindings:
+nnoremap <silent>rar  :<C-u>CocCommand rust-analyzer.run<CR>
+nnoremap <silent>raem :<C-u>CocCommand rust-analyzer.expandMacro<CR>
+nnoremap <silent>rare :<C-u>CocCommand rust-analyzer.reload<CR>
+nnoremap <silent>ras  :<C-u>CocCommand rust-analyzer.analyzerStatus<CR>
+nnoremap <silent>rau  :<C-u>CocCommand rust-analyzer.upgrade<CR>
 '''
 
 [[plugins]]
@@ -353,8 +386,6 @@ let g:vista#renderer#icons = {
 
 nmap <silent><space>tv : Vista!!<CR>
 '''
-
-[[plugins]]
 repo = 'liuchengxu/vim-clap'
 build=':Clap install-binary!'
 hook_add = '''
@@ -362,19 +393,19 @@ let g:clap_theme = 'material_design_dark'
 let height = &lines / 3
 let width = float2nr(&columns - (&columns * 2 / 10))
 let col = float2nr((&columns - width) / 2)
-nmap <silent> zf : Clap files<CR>
-nmap <silent> zb : Clap buffers<CR>
-nmap <silent> zl : Clap blines<CR>
-nmap <silent> zg : Clap git_diff_files<CR>
-nmap <silent> zh : Clap history<CR>
-nmap <silent> zr : Clap grep<CR>
-nmap <silent> zv : Clap grep ++query=<cword><CR>
-vmap <silent> zv : Clap grep ++query=@visual<CR>
-nmap <silent> zR : Clap grep2<CR>
-nmap <silent> zd : Clap command<CR>
-nmap <silent> zy : Clap yanks<CR>
-nmap <silent> z: : Clap hist:<CR>
-nmap <silent> z/ : Clap hist/<CR>
+nmap <silent> <Space>zf : Clap files<CR>
+nmap <silent> <Space>zb : Clap buffers<CR>
+nmap <silent> <Space>zl : Clap blines<CR>
+nmap <silent> <Space>zg : Clap git_diff_files<CR>
+nmap <silent> <Space>zh : Clap history<CR>
+nmap <silent> <Space>zr : Clap grep<CR>
+nmap <silent> <Space>zv : Clap grep ++query=<cword><CR>
+vmap <silent> <Space>zv : Clap grep ++query=@visual<CR>
+nmap <silent> <Space>zR : Clap grep2<CR>
+nmap <silent> <Space>zd : Clap command<CR>
+nmap <silent> <Space>zy : Clap yanks<CR>
+nmap <silent> <Space>z: : Clap hist:<CR>
+nmap <silent> <Space>z/ : Clap hist/<CR>
 '''
 
 [[plugins]]
@@ -389,3 +420,37 @@ let g:blamer_delay = 50
 repo = 'kabirz/gn.nvim'
 rtp = 'misc/vim'
 
+[[plugins]]
+repo = 'liuchengxu/vim-which-key'
+hook_add = '''
+nnoremap <silent> <Space>       :WhichKey '<Space>'<CR>
+vnoremap <silent> <Space>       :WhichKeyVisual '<Space>'<CR>
+nnoremap <silent> <Leader>      :WhichKey '<Leader>'<CR>
+vnoremap <silent> <Leader>      :WhichKeyVisual '<Leader>'<CR>
+nnoremap <silent> <LocalLeader> :WhichKey '<LocalLeader>'<CR>
+vnoremap <silent> <LocalLeader> :WhichKeyVisual '<LocalLeader>'<CR>
+let g:which_key_sep = '→'
+set timeoutlen=500
+
+"space key
+let g:space_map = {}
+let g:space_map.b = { 'name': '+abc',
+    \ 'y': [':CocList', 'coclist'],
+\}
+let g:space_map.c = { 'name': '+Coc',
+\}
+let g:space_map.z = { 'name': '+Clap'}
+call which_key#register('<Space>', "g:space_map")
+
+"leader key
+let g:leader_map = {}
+let g:leader_map.l = {'name': 'lazygit'}
+call which_key#register('\', "g:leader_map")
+
+"local leader key
+let g:localleader_map = {}
+let g:localleader_map.c = {'name': 'AsyncTask cmake'}
+let g:localleader_map.f = {'name': 'AsyncTask file'}
+let g:localleader_map.w = {'name': 'AsyncTask west'}
+call which_key#register(';', "g:localleader_map")
+'''

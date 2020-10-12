@@ -13,6 +13,7 @@ set cursorline
 set shell=/bin/sh
 set smartindent
 set encoding=utf-8
+let maplocalleader=';'
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 if exists('g:vscode')
     finish
