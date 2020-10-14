@@ -255,8 +255,8 @@ repo = 'tpope/vim-speeddating'
 [[plugins]]
 repo = 'itchyny/calendar.vim'
 
-#[[plugins]]
-#repo = 'tpope/vim-fugitive'
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
