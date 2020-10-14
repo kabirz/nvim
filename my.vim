@@ -1,11 +1,3 @@
-" window
-nnoremap <space>h <C-w>h
-nnoremap <space>j <C-w>j
-nnoremap <space>k <C-w>k
-nnoremap <space>l <C-w>l
-nnoremap <space><tab> <C-o>
-nnoremap <silent><leader>ev :tabe $MYVIMRC<CR>
-nnoremap <silent><leader>sv :source $MYVIMRC<CR>
 " buffer keymap
 nnoremap <silent>bf :bfirst<CR>
 nnoremap <silent>be :blast<CR>
@@ -40,5 +32,5 @@ nnoremap <silent>gb :make<CR>
 set foldmethod=syntax
 set foldlevelstart=99
 autocmd FileType c,cpp          setlocal sw=8 sts=8 ts=8 et cc=80
-autocmd FileType rust           setlocal sw=4 sts=4 ts=4 noet cc=80
+autocmd FileType rust           setlocal sw=4 sts=4 ts=4 noet cc=100
 autocmd filetype python         setlocal sw=2 sts=2 ts=2 et cc=80

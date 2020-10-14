@@ -37,9 +37,7 @@ hook_add = '''
 noremap <silent><C-p> :FZF<CR>
 noremap <silent><C-f> :Ag<CR>
 command! -bang -nargs=* MRU call fzf#vim#history(fzf#vim#with_preview())
-noremap <silent><leader>j :MRU<CR>
 '''
-
 
 [[plugins]]
 repo = 'francoiscabrol/ranger.vim'
@@ -51,16 +49,6 @@ repo = 'skywind3000/asynctasks.vim'
 repo = 'skywind3000/asyncrun.vim'
 hook_add = '''
 let g:asyncrun_open = 6
-noremap <silent><LocalLeader>cb :AsyncTask cmake-build<CR>
-noremap <silent><LocalLeader>cr :AsyncTask cmake-run<CR>
-noremap <silent><LocalLeader>ca :AsyncTask cmake-build-and-run<CR>
-noremap <silent><LocalLeader>cc :AsyncTask cmake-clean<CR>
-noremap <silent><LocalLeader>fb :AsyncTask file-build<CR>
-noremap <silent><LocalLeader>fr :AsyncTask file-run<CR>
-noremap <silent><LocalLeader>wb :AsyncTask west-build<CR>
-noremap <silent><LocalLeader>wr :AsyncTask west-rebuild<CR>
-noremap <silent><LocalLeader>wf :AsyncTask west-flash<CR>
-noremap <silent><LocalLeader>q :ccl<CR>
 '''
 
 [[plugins]]
@@ -122,22 +110,6 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-nnoremap <silent> <Space>y :<C-u>CocList -A --normal yank<CR>
-noremap <silent><Space>a :<C-U><C-R>=printf("CocCommand explorer %s", expand('%:p:h'))<CR><CR>
-" popup
-nmap <leader>t <Plug>(coc-translator-p)
-vmap <leader>t <Plug>(coc-translator-pv)
-" echo
-nmap <leader>e <Plug>(coc-translator-e)
-nmap <leader>e <Plug>(coc-translator-ev)
-" replace
-nmap <leader>r <Pluh>(coc-translator-r)
-nmap <leader>r <Plug>(coc-translator-rv)
-"tasks
-"nmap <silent> <Space>by :<C-u>CocList tasks<CR>
-"format
-vmap <leader>F  <Plug>(coc-format-selected)
-nmap <leader>F  <Plug>(coc-format-selected)
 "coc-ccls
 set updatetime=100
 nmap <silent> gd <Plug>(coc-definition)
@@ -149,30 +121,7 @@ nmap <silent> gW <Plug>(coc-diagnostic-prev)
 nmap <silent> ge <Plug>(coc-diagnostic-next-error)
 nmap <silent> gE <Plug>(coc-diagnostic-prev-error)
 nmap <silent> g[ <Plug>(coc-format)
-nnoremap <silent> <leader>sd :call <SID>show_documentation()<CR>
 let g:markdown_fenced_languages = ['vim', 'help']
-"key for fzf
-nmap <silent> <Space>bc :<C-u>CocCommand fzf-preview.Ctags<CR>
-nmap <silent> <Space>bj :<C-u>CocCommand fzf-preview.Jumps<CR>
-nmap <silent> <Space>bb :<C-u>CocCommand fzf-preview.Buffers<CR>
-nmap <silent> <Space>bB :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nmap <silent> <Space>gl :<C-u>CocCommand fzf-preview.GitLogs<CR>
-nmap <silent> <Space>gf :<C-u>CocCommand fzf-preview.GitFiles<CR>
-nmap <silent> <Space>gs :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nmap <silent> <Space>gt :<C-u>CocCommand fzf-preview.GitStashes<CR>
-nmap <silent> <Space>ga :<C-u>CocCommand fzf-preview.GitActions<CR>
-nmap <silent> <Space>bu :<C-u>CocCommand fzf-preview.MruFiles<CR>
-nmap <silent> <Space>bw :<C-u>CocCommand fzf-preview.MrwFiles<CR>
-nmap <silent> <Space>bo :<C-u>CocCommand fzf-preview.OldFiles<CR>
-nmap <silent> <Space>bq :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nmap <silent> <Space>bf :<C-U><C-R>=printf("CocCommand fzf-preview.ProjectGrep %s", expand("<cword>"))<CR><CR>
-
-" Rust analyzer bindings:
-nnoremap <silent><LocalLeader>rr :<C-u>CocCommand rust-analyzer.run<CR>
-nnoremap <silent><LocalLeader>re :<C-u>CocCommand rust-analyzer.expandMacro<CR>
-nnoremap <silent><LocalLeader>rl :<C-u>CocCommand rust-analyzer.reload<CR>
-nnoremap <silent><LocalLeader>ra :<C-u>CocCommand rust-analyzer.analyzerStatus<CR>
-nnoremap <silent><LocalLeader>ru :<C-u>CocCommand rust-analyzer.upgrade<CR>
 '''
 
 [[plugins]]
@@ -182,20 +131,7 @@ hook_add = '''
 let g:Lf_ShowRelativePath = 0
 let g:Lf_HideHelp = 1
 let g:Lf_PreviewResult = {'Function':0, 'Colorscheme':1}
-let g:Lf_GtagsAutoGenerate = 1
-let g:Lf_Gtagslabel = 'native-pygments'
 let g:Lf_ReverseOrder = 0
-noremap <silent><Space>fi :Leaderf! file<CR>
-noremap <silent><Space>fu :Leaderf! function<CR>
-noremap <silent><Space>fm :Leaderf! mru --cwd<CR>
-noremap <silent><Space>fh :Leaderf! mru<CR>
-noremap <silent><Space>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <silent><Space>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <silent><Space>fp :<C-U><C-R>=printf("Leaderf! gtags --recall")<CR><CR>
-noremap <silent><Space>fs :<C-U><C-R>=printf("Leaderf! gtags -s %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <silent><Space>fg :<C-U><C-R>=printf("Leaderf! gtags -g %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <silent><Space>fo :<C-U><C-R>=printf("Leaderf! gtags --by-context --auto-jump")<CR><CR>
-noremap <silent><Space>ff :<C-U><C-R>=printf("Leaderf! rg  %s", expand("<cword>"))<CR><CR>
 '''
 
 [[plugins]] # colorscheme
@@ -268,15 +204,9 @@ repo = 'wsdjeg/dein-ui.vim'
 [[plugins]]
 repo = 'kdheepak/lazygit.nvim'
 rev = 'nvim-v0.4.3'
-hook_add = '''
-nnoremap <silent> <leader>lg :LazyGit<CR>
-'''
 
 [[plugins]]
 repo = 'dhruvasagar/vim-zoom'
-hook_add = '''
-nmap <Space>m <Plug>(zoom-toggle)
-'''
 
 [[plugins]]
 repo = 'puremourning/vimspector'
@@ -291,11 +221,6 @@ let g:floaterm_position="bottomright"
 let g:floaterm_keymap_toggle = '<Space>tt'
 let g:floaterm_keymap_next = '<Space>tn'
 let g:floaterm_keymap_prev = '<Space>tm'
-nmap <silent><Space>tp : FloatermNew ipython3<CR>
-nmap <silent><Space>tr : FloatermNew ranger<CR>
-nmap <silent><Space>tf : FloatermNew fzf<CR>
-nmap <silent><Space>tl : FloatermNew lazygit<CR>
-nmap <silent><Space>tx : FloatermNew xonsh<CR>
 function! s:runner_proc(opts)
   let curr_bufnr = floaterm#curr()
   if has_key(a:opts, 'silent') && a:opts.silent == 1
@@ -382,9 +307,9 @@ let g:vista#renderer#icons = {
 	\ 'typeParameter':  "\uf278",
 	\ 'default':        "\uf29c"
 	\ }
-
-nmap <silent><Space>tv : Vista!!<CR>
 '''
+
+[[plugins]]
 repo = 'liuchengxu/vim-clap'
 build=':Clap install-binary!'
 hook_add = '''
@@ -392,25 +317,6 @@ let g:clap_theme = 'material_design_dark'
 let height = &lines / 3
 let width = float2nr(&columns - (&columns * 2 / 10))
 let col = float2nr((&columns - width) / 2)
-nmap <silent> <Space>zf : Clap files<CR>
-nmap <silent> <Space>zb : Clap buffers<CR>
-nmap <silent> <Space>zC : Clap bcommits<CR>
-nmap <silent> <Space>zc : Clap commits<CR>
-nmap <silent> <Space>zl : Clap blines<CR>
-nmap <silent> <Space>zg : Clap git_diff_files<CR>
-nmap <silent> <Space>zh : Clap history<CR>
-nmap <silent> <Space>zj : Clap jumps<CR>
-nmap <silent> <Space>zr : Clap grep<CR>
-nmap <silent> <Space>za : Clap registers<CR>
-nmap <silent> <Space>zm : Clap maps<CR>
-nmap <silent> <Space>zv : Clap grep ++query=<cword><CR>
-vmap <silent> <Space>zv : Clap grep ++query=@visual<CR>
-nmap <silent> <Space>zR : Clap grep2<CR>
-nmap <silent> <Space>zd : Clap command<CR>
-nmap <silent> <Space>zy : Clap yanks<CR>
-nmap <silent> <Space>zw : Clap windows<CR>
-nmap <silent> <Space>z: : Clap hist:<CR>
-nmap <silent> <Space>z/ : Clap hist/<CR>
 '''
 
 [[plugins]]
@@ -438,25 +344,119 @@ let g:which_key_sep = '→'
 set timeoutlen=500
 
 "space key
-let g:space_map = {}
-let g:space_map.b = { 'name': '+fzf-preview-option'}
-let g:space_map.g = { 'name': '+fzf-preview-git'}
-let g:space_map.c = { 'name': '+Coc'}
-let g:space_map.f = { 'name': '+Leaderf'}
-let g:space_map.t = { 'name': '+Floaterm'}
-let g:space_map.z = { 'name': '+Clap'}
+let g:space_map = {
+	\'<Tab>': ['<C-o>', 'next postion'],
+	\'a': [':CocCommand explorer '.expand('%:p:h'), 'file explorer'],
+	\'b': {'name': '+fzf-preview-option',
+		\'c': [':CocCommand fzf-preview.Ctags', 'ctags'],
+		\'j': [':CocCommand fzf-preview.Jumps', 'jumps'],
+		\'b': [':CocCommand fzf-preview.Buffers', 'buffers'],
+		\'B': [':CocCommand fzf-preview.AllBuffers', 'All buffers'],
+		\'u': [':CocCommand fzf-preview.MruFiles', 'MruFiles'],
+		\'w': [':CocCommand fzf-preview.MrwFiles', 'MrwFiles'],
+		\'o': [':CocCommand fzf-preview.OldFiles', 'OldFiles'],
+		\'q': [':CocCommand fzf-preview.QuickFix', 'QuickFix'],
+		\'f': [':CocCommand fzf-preview.ProjectGrep '.expand('<cword>'), 'ProjectGrep'],
+		\'y': [':CocList tasks', 'coc tasks'],
+	      \},
+	\'c': {'name': '+Config',
+		\'c': [':CocConfig', 'coc config'],
+		\'e': [':e $MYVIMRC', 'editor vim config'],
+		\'g': [':e ~/.gitconfig', 'editor git config'],
+		\'s': [':e ~/.ssh/config', 'editor ssh config'],
+		\'u': [':source $MYVIMRC', 'update vim config'],
+	      \},
+	\'e': [':CocCommand explorer', 'project explorer'],
+	\'f': {'name': '+Leaderf',
+		\'i': [':Leaderf! file', 'leader file'],
+		\'u': [':Leaderf! function', 'leader function'],
+		\'m': [':Leaderf! mru --cwd', 'current project history'],
+		\'h': [':Leaderf! mru', 'global history'],
+		\'f': [':Leaderf! rg '.expand('<cword>'), 'rg'],
+	      \},
+	\'g': {'name': '+fzf-preview-git',
+		\'l': [':<C-u>CocCommand fzf-preview.GitLogs', 'git log'],
+		\'f': [':<C-u>CocCommand fzf-preview.GitFiles', 'git files'],
+		\'s': [':<C-u>CocCommand fzf-preview.GitStatus', 'git status'],
+		\'t': [':<C-u>CocCommand fzf-preview.GitStashes', 'git stashe'],
+		\'a': [':<C-u>CocCommand fzf-preview.GitActions', 'git action'],
+	      \},
+	\'h': ['<C-w>h', 'left windows'],
+	\'l': ['<C-w>l', 'right windows'],
+	\'j': ['<C-w>j', 'top windows'],
+	\'k': ['<C-w>k', 'bottom windows'],
+	\'m': [':<Plug>(zoom-toggle)', 'zoom toggle'],
+	\'t': {'name': '+Floaterm',
+		\'p': [':FloatermNew ipython3', 'ipython3'],
+		\'r': [':FloatermNew ranger', 'ranger'],
+		\'f': [':FloatermNew fzf', 'fzf'],
+		\'l': [':FloatermNew lazygit', 'lazygit'],
+		\'x': [':FloatermNew xonsh', 'xonsh'],
+		\'t': 'toggle',
+		\'n': 'next',
+		\'m': 'prev',
+	      \},
+	\'v': [':Vista!!', 'vista ctags'],
+	\'y': [':CocList -A --normal yank', 'yank lists'],
+	\'z': {'name': '+Clap',
+		\'f': [':Clap files', 'files'],
+		\'b': [':Clap buffers', 'buffers'],
+		\'C': [':Clap bcommits', 'current commits'],
+		\'c': [':Clap commits', 'commits'],
+		\'l': [':Clap blines', 'linex'],
+		\'g': [':Clap git_diff_files', 'git diff files'],
+		\'h': [':Clap history', 'history'],
+		\'j': [':Clap jumps', 'jumps'],
+		\'r': [':Clap grep', 'grep'],
+		\'a': [':Clap registers', 'registers'],
+		\'m': [':Clap maps', 'maps'],
+		\'v': [':Clap grep ++query=<cword>', 'find current word'],
+		\'R': [':Clap grep2', 'grep2'],
+		\'d': [':Clap command', 'command'],
+		\'y': [':Clap yanks', 'yanks'],
+		\'w': [':Clap windows', 'windows'],
+		\':': [':Clap hist:', 'history command'],
+		\'/': [':Clap hist/', 'history search'],
+	      \},
+\}
 call which_key#register('<Space>', "g:space_map")
 
 "leader key
-let g:leader_map = {}
-let g:leader_map.l = {'name': 'lazygit'}
+let g:leader_map = {
+	\'j': [':MRU', 'mru'],
+	\'l': [':LazyGit', 'lazygit'],
+	\'t': [':<Plug>(coc-translator-p)', 'coc translator pull'],
+	\'e': [':<Plug>(coc-translator-e)', 'coc translator echo'],
+	\'r': [':<Plug>(coc-translator-r)', 'coc translator replace'],
+	\'F': [':<Plug>(coc-format-selected)', 'coc format'],
+\}
 call which_key#register('\', "g:leader_map")
 
 "local leader key
-let g:localleader_map = {}
-let g:localleader_map.c = {'name': '+AsyncTask-cmake'}
-let g:localleader_map.f = {'name': '+AsyncTask-file'}
-let g:localleader_map.r = {'name': '+rust-analyzer'}
-let g:localleader_map.w = {'name': '+AsyncTask-west'}
+let g:localleader_map = {
+	\'c': {'name': '+AsyncTask-cmake',
+		\'b': [':AsyncTask cmake-build', 'cmake build'],
+		\'r': [':AsyncTask cmake-run', 'cmake run'],
+		\'a': [':AsyncTask cmake-build-and-run', 'cmake build and run'],
+		\'c': [':AsyncTask cmake-clean', 'cmake clean'],
+	      \},
+	\'f': {'name': '+AsyncTask-file',
+		\'b': [':AsyncTask file-build', 'file build'],
+		\'r': [':AsyncTask file-run', 'file run'],
+	      \},
+	\'r': {'name': '+rust-analyzer',
+		\'r': [':CocCommand rust-analyzer.run', 'run'],
+		\'e': [':CocCommand rust-analyzer.expandMacro', 'expand macro'],
+		\'l': [':CocCommand rust-analyzer.reload', 'reload'],
+		\'a': [':CocCommand rust-analyzer.analyzerStatus', 'status'],
+		\'u': [':CocCommand rust-analyzer.upgrade', 'upgrade'],
+	      \},
+	\'w': {'name': '+AsyncTask-west',
+		\'b': [':AsyncTask west-build', 'west build'],
+		\'r': [':AsyncTask west-rebuild', 'west rebuild'],
+		\'f': [':AsyncTask west-flash', 'west flash'],
+	      \},
+	\'q': [':ccl', 'Close quickfix'],
+\}
 call which_key#register(';', "g:localleader_map")
 '''
