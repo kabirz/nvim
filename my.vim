@@ -23,8 +23,6 @@ noremap <silent><space>q :qa <CR>
 set autowriteall
 autocmd BufEnter * set mouse=
 
-"formatprg
-autocmd FileType c,cpp,h set formatprg=uncrustify\ -c\ ~/.config/nvim/.uncrustify.cfg\ --no-backup\ 2>/dev/null
 "makeprg
 autocmd FileType c,cpp set makeprg=make\ %:t:r\ 1>/dev/null\ &&\ ./%:t:r
 nnoremap <silent>gb :make<CR>
