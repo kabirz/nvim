@@ -29,6 +29,6 @@ nnoremap <silent>gb :make<CR>
 "fold
 set foldmethod=syntax
 set foldlevelstart=99
-autocmd FileType c,cpp          setlocal sw=8 sts=8 ts=8 et cc=80
-autocmd FileType rust           setlocal sw=4 sts=4 ts=4 noet cc=100
+autocmd FileType c,cpp          setlocal sw=8 sts=8 ts=8 et cc=120
+autocmd FileType rust           setlocal sw=4 sts=4 ts=4 noet cc=120
 autocmd filetype python         setlocal sw=2 sts=2 ts=2 et cc=80

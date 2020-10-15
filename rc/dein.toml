@@ -385,7 +385,7 @@ let g:space_map = {
 	\'l': ['<C-w>l', 'right windows'],
 	\'j': ['<C-w>j', 'top windows'],
 	\'k': ['<C-w>k', 'bottom windows'],
-	\'m': [':<Plug>(zoom-toggle)', 'zoom toggle'],
+	\'m': ['<Plug>(zoom-toggle)', 'zoom toggle'],
 	\'t': {'name': '+Floaterm',
 		\'p': [':FloatermNew ipython3', 'ipython3'],
 		\'r': [':FloatermNew ranger', 'ranger'],
