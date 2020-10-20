@@ -15,13 +15,12 @@ nnoremap <silent>tl :tabnext<CR>
 
 " set paste
 set pastetoggle=<space>p
-nnoremap <silent><space><space> :set mouse=a <CR>
+set mouse=a
 " close vim
 noremap <silent><space>q :qa <CR>
 " auto command
 "set autochdir
 set autowriteall
-autocmd BufEnter * set mouse=
 
 "makeprg
 autocmd FileType c,cpp set makeprg=make\ %:t:r\ 1>/dev/null\ &&\ ./%:t:r

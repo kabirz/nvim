@@ -113,7 +113,9 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 "coc-ccls
 set updatetime=100
 nmap <silent> gd <Plug>(coc-definition)
+map <silent> <C-LeftMouse> <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
+map <silent> <C-RightMouse> <Plug>(coc-references)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gw <Plug>(coc-diagnostic-next)
@@ -439,6 +441,8 @@ let g:localleader_map = {
 		\'r': [':AsyncTask cmake-run', 'cmake run'],
 		\'a': [':AsyncTask cmake-build-and-run', 'cmake build and run'],
 		\'c': [':AsyncTask cmake-clean', 'cmake clean'],
+		\'f': [':AsyncTask cargo-fb', 'cargo flash bin'],
+		\'e': [':AsyncTask cargo-fe', 'cargo flash example'],
 	      \},
 	\'f': {'name': '+AsyncTask-file',
 		\'b': [':AsyncTask file-build', 'file build'],
