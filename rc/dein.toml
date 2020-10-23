@@ -345,10 +345,11 @@ vnoremap <silent> <LocalLeader> :WhichKeyVisual '<LocalLeader>'<CR>
 let g:which_key_sep = '→'
 set timeoutlen=500
 
+noremap <silent><Space>a :<C-U><C-R>=printf("CocCommand explorer %s", expand('%:p:h'))<CR><CR>
 "space key
 let g:space_map = {
 	\'<Tab>': ['<C-o>', 'next postion'],
-	\'a': [':CocCommand explorer '.expand('%:p:h'), 'file explorer'],
+	\'a': 'file explorer',
 	\'b': {'name': '+fzf-preview-option',
 		\'c': [':CocCommand fzf-preview.Ctags', 'ctags'],
 		\'j': [':CocCommand fzf-preview.Jumps', 'jumps'],
