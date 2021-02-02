@@ -334,6 +334,9 @@ repo = 'kabirz/gn.nvim'
 rtp = 'misc/vim'
 
 [[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
 repo = 'liuchengxu/vim-which-key'
 hook_add = '''
 nnoremap <silent> <Space>       :WhichKey '<Space>'<CR>
@@ -346,6 +349,7 @@ let g:which_key_sep = '→'
 set timeoutlen=500
 
 noremap <silent><Space>a :<C-U><C-R>=printf("CocCommand explorer %s", expand('%:p:h'))<CR><CR>
+noremap <silent><Space>ff : <C-U><C-R>=printf("Leaderf! rg  %s", expand("<cword>"))<CR><CR>
 "space key
 let g:space_map = {
 	\'<Tab>': ['<C-o>', 'next postion'],
@@ -375,7 +379,7 @@ let g:space_map = {
 		\'u': [':Leaderf! function', 'leader function'],
 		\'m': [':Leaderf! mru --cwd', 'current project history'],
 		\'h': [':Leaderf! mru', 'global history'],
-		\'f': [':Leaderf! rg '.expand('<cword>'), 'rg'],
+		\'f': 'rg',
 	      \},
 	\'g': {'name': '+fzf-preview-git',
 		\'l': [':CocCommand fzf-preview.GitLogs', 'git log'],

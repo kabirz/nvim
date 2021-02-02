@@ -88,7 +88,7 @@
 	"python.linting.pylintEnabled": true,
 	"python.linting.enabled": true,
 	"explorer.width": 36,
-	"explorer.previewAction.onHover": true,
+	"explorer.previewAction.onHover": "labeling",
 	"explorer.git.showIgnored": true,
 	"git.enableGlobalStatus": false,
 	"git.enableGutters": true,
@@ -109,6 +109,5 @@
 	"explorer.git.icon.status.ignored": "",
 	"explorer.git.icon.status.unmerged": "◦",
 	"explorer.git.icon.status.untracked": "",
-	"rust-analyzer.serverPath": "~/.local/bin/rust-analyzer-linux",
 	"explorer.icon.enableNerdfont": true
 }
