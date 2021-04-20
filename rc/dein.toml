@@ -196,11 +196,6 @@ let g:vim_markdown_folding_disabled = 1
 '''
 
 [[plugins]]
-repo = 'rhysd/vim-clang-format'
-hook_add = '''
-runtime local_clang-format.vim
-'''
-[[plugins]]
 repo = 'wsdjeg/dein-ui.vim'
 
 [[plugins]]
