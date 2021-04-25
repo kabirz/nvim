@@ -24,5 +24,5 @@ sudo apt install neovim silversearcher-ag ranger cmake nodejs yarn npm ccls clan
 
 #### for archlinux
 ```bash
-sudo pacman -S neovim fzf the_silver_searcher ranger cmake nodejs yarn npm rust-analyzer ccls clang-format global ripgrep xonsh ipython3
+cat ./.arch_tool | paru -S -
 ```
