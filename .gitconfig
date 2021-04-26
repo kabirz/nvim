@@ -1,5 +1,9 @@
-[credential]
-	helper = store
+[init]
+	defaultBranch = main
+
+[credential "https://github.com.cnpmjs.org"]
+        username = kabirz
+        helper = store
 
 [core]
 	editor = vim
