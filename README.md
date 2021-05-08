@@ -15,11 +15,13 @@ ln -s .config/nvim/init.vim ~/.vimrc
 * ranger
 * fzf
 * powerline & nerd font
+* silicon
 
 #### for Ubuntu 20.04
 need install rust-analyzer
 ```bash
 sudo apt install neovim silversearcher-ag ranger cmake nodejs yarn npm ccls clang-format global ripgrep xonsh ipython3
+cargo install silicon
 ```
 
 #### for archlinux

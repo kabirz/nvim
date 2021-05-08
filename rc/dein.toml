@@ -332,6 +332,24 @@ rtp = 'misc/vim'
 repo = 'cespare/vim-toml'
 
 [[plugins]]
+repo = 'segeljakt/vim-silicon'
+hook_add = '''
+let g:silicon = {
+	\ 'theme':              'Dracula',
+	\ 'font':               'Source Code Pro',
+	\ 'pad-horiz':          0,
+	\ 'pad-vert':           0,
+	\ 'shadow-blur-radius': 0,
+	\ 'shadow-offset-x':    0,
+	\ 'shadow-offset-y':    0,
+	\ 'line-number':        v:true,
+	\ 'round-corner':       v:true,
+	\ 'window-controls':    v:true,
+	\ 'output':             '~/images/silicon-{time:%Y-%m-%d-%H%M%S}.png',
+	\ }
+'''
+
+[[plugins]]
 repo = 'liuchengxu/vim-which-key'
 hook_add = '''
 nnoremap <silent> <Space>       :WhichKey '<Space>'<CR>
@@ -398,6 +416,7 @@ let g:space_map = {
 		\'n': 'next',
 		\'m': 'prev',
 	      \},
+	\'s': [':Silicon', 'silicon code'],
 	\'v': [':Vista!!', 'vista ctags'],
 	\'y': [':CocList -A --normal yank', 'yank lists'],
 	\'z': {'name': '+Clap',
