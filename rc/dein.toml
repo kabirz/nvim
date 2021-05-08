@@ -343,7 +343,7 @@ let g:silicon = {
 	\ 'shadow-offset-x':    0,
 	\ 'shadow-offset-y':    0,
 	\ 'line-number':        v:true,
-	\ 'round-corner':       v:true,
+	\ 'round-corner':       v:false,
 	\ 'window-controls':    v:true,
 	\ 'output':             '~/images/silicon-{time:%Y-%m-%d-%H%M%S}.png',
 	\ }
