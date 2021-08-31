@@ -70,7 +70,7 @@ let g:coc_global_extensions = [
 	\'coc-lists',
 	\'coc-pairs',
 	\'coc-prettier',
-	\'coc-python',
+	\'coc-jedi',
 	\'coc-rust-analyzer',
 	\'coc-sourcekit',
 	\'coc-snippets',
@@ -110,7 +110,7 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-"coc-ccls
+"coc-lsp
 set updatetime=100
 nmap <silent> gd <Plug>(coc-definition)
 map <silent> <C-LeftMouse> <Plug>(coc-definition)
@@ -124,6 +124,40 @@ nmap <silent> ge <Plug>(coc-diagnostic-next-error)
 nmap <silent> gE <Plug>(coc-diagnostic-prev-error)
 nmap <silent> g[ <Plug>(coc-format)
 let g:markdown_fenced_languages = ['vim', 'help']
+let g:coc_explorer_global_presets = {
+\   '.vim': {
+\     'root-uri': '~/.vim',
+\   },
+\   'tab': {
+\     'position': 'tab',
+\     'quit-on-open': v:true,
+\   },
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingTop': {
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingLeftside': {
+\     'position': 'floating',
+\     'floating-position': 'left-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingRightside': {
+\     'position': 'floating',
+\     'floating-position': 'right-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'simplify': {
+\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
+
 '''
 
 [[plugins]]
@@ -141,6 +175,9 @@ repo = 'dracula/vim'
 hook_add = '''
 let g:dracula_colorterm = 0
 colorscheme dracula
+hi! link Pmenu        DraculaGreen
+hi! link PmenuSbar    DraculaBgDark
+hi! link PmenuSel     DraculaYellow
 '''
 
 [[plugins]]
