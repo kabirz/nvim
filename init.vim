@@ -6,6 +6,7 @@
 "         |___/
 
 set number
+set relativenumber
 set tabstop=8
 set incsearch
 set hlsearch
