@@ -73,6 +73,7 @@ let g:coc_global_extensions = [
 	\'coc-rust-analyzer',
 	\'coc-sourcekit',
 	\'coc-snippets',
+	\'coc-tabnine',
 	\'coc-tailwindcss',
 	\'coc-tasks',
 	\'coc-tslint',
