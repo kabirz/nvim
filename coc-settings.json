@@ -76,8 +76,8 @@
 		"variable": ""
 	},
 	"codeLens.enable": true,
+	"codeLens.position": "eol",
 	"suggest.enablePreselect": true,
-	"suggest.enablePreview": true,
 	"pylsp.plugins.pycodestyle.maxLineLength": 90,
 	"explorer.width": 36,
 	"explorer.previewAction.onHover": "labeling",
