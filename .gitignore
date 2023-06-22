@@ -2,3 +2,5 @@ pack/
 autoload/
 .netrwhist
 .ropeproject
+.luarc.json
+lazy-lock.json

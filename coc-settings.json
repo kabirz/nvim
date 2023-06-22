@@ -1,21 +1,26 @@
 {
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"languageserver": {
-		/*
 		"clangd": {
 			"command": "clangd",
 			"rootPatterns": ["compile_flags.txt", "compile_commands.json"],
 			"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
 		},
-		"cquery": {
-			"command": "cquery",
-			"args": ["--log-file=/tmp/cq.log"],
-			"filetypes": ["c", "cc", "cpp", "c++"],
-			"rootPatterns": ["compile_flags.txt", "compile_commands.json", ".git/", ".hg/"],
+		/*
+		"ccls": {
+			"command": "ccls",
+			"filetypes": ["c", "cpp"],
+			"rootPatterns": [".ccls-root", "compile_commands.json"],
 			"initializationOptions": {
-				"cacheDirectory": "/tmp/cquery"
+				"cache": {
+					"directory": ".ccls-cache"
+				},
+				"client": {
+					"snippetSupport": true
+				},
 			}
 		},
+		*/
 		// npm i -g bash-language-server or pacman -S bash-language-server
 		"bash": {
 			"command": "bash-language-server",
@@ -32,19 +37,6 @@
 			],
 			"initializationOptions": {
 				"buildDirectory": "build"
-			}
-		},
-		"ccls": {
-			"command": "ccls",
-			"filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-			"rootPatterns": [".ccls",".ccls-root", "compile_commands.json", ".git/", ".hg/"],
-			"initializationOptions": {
-				"cache": {
-					"directory": ".ccls-cache"
-				},
-				"client": {
-					"snippetSupport": true
-				}
 			}
 		}
 	},
@@ -78,7 +70,8 @@
 	"codeLens.enable": true,
 	"codeLens.position": "eol",
 	"suggest.enablePreselect": true,
-	"pylsp.plugins.pycodestyle.maxLineLength": 90,
+	"pylsp.plugins.mccabe.threshold": 35,
+	"pylsp.plugins.pycodestyle.maxLineLength": 190,
 	"explorer.width": 36,
 	"explorer.previewAction.onHover": "labeling",
 	"explorer.git.showIgnored": true,
