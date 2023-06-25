@@ -1,10 +1,6 @@
-# nvim config for dein
+# nvim config for lazy
 ```bash
-git clone https://github.com/kabirz/nvim ~/.config/nvim/
-```
-### for vim
-```bash
-ln -s .config/nvim/init.vim ~/.vimrc
+git clone -b lazy https://github.com/kabirz/nvim ~/.config/nvim/
 ```
 
 ### depends
