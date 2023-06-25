@@ -175,7 +175,9 @@ M.load_mappings = function(section)
   end
   for mode, mode_values in pairs(section_value) do
     for key, content in pairs(mode_values) do
-      vim.keymap.set(mode, key, content[1], {desc = content[2] })
+      opts = content.opts or {}
+      opts.desc = content[2]
+      vim.keymap.set(mode, key, content[1], opts)
     end
   end
 end

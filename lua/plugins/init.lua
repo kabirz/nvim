@@ -1,35 +1,23 @@
 local plugins = {
-  'mhinz/vim-startify',
-  'wsdjeg/dein-ui.vim',
-  'ryanoasis/vim-devicons',
-  'godlygeek/tabular',
-  'junegunn/vim-emoji',
-  'sharksforarms/vimspector-gen',
+  "nvim-tree/nvim-web-devicons",
   'Exafunction/codeium.vim',
   'cpiger/NeoDebug',
   'honza/vim-snippets',
-  'tpope/vim-commentary',
-  'tpope/vim-repeat',
-  'tpope/vim-surround',
-  'tpope/vim-speeddating',
-  'itchyny/calendar.vim',
-  'tpope/vim-fugitive',
   'cespare/vim-toml',
   'mhinz/vim-startify',
   {
-    'vim-airline/vim-airline',
-    init = function()
-      vim.g.airline_powerline_fonts = 1
-      vim.g.airline_disable_statusline = 1
-      vim.g['airline#extensions#tabline#enabled'] = 1
-    end,
-  },
-  {
     'vim-airline/vim-airline-themes',
+    dependencies = {
+      'vim-airline/vim-airline',
+      init = function()
+        vim.g.airline_powerline_fonts = 1
+        vim.g.airline_disable_statusline = 1
+        vim.g['airline#extensions#tabline#enabled'] = 1
+      end,
+    },
     init = function()
       vim.g.airline_theme = 'badwolf'
     end,
-
   },
   {
     'hardcoreplayers/spaceline.vim',
@@ -220,10 +208,11 @@ local plugins = {
     end,
   },
 
+
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    keys = { "<leader>", '"', "'", "`", "c", "v", 'g', ';' },
+    keys = { "<leader>", '"', "'", "`", "c", "v", 'g', ';', ',', 'd' },
     init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300

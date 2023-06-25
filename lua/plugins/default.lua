@@ -14,6 +14,7 @@ set.mouse = 'a'
 set.fencs = 'utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
 set.shell = '/usr/bin/zsh'
 vim.g.mapleader = " "
+set.clipboard = 'unnamed,unnamedplus'
 
 -- auto command
 set.autochdir = true
