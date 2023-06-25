@@ -1,6 +1,5 @@
 local plugins = {
-  "nvim-tree/nvim-web-devicons",
-  'Exafunction/codeium.vim',
+  'nvim-tree/nvim-web-devicons',
   'cpiger/NeoDebug',
   'honza/vim-snippets',
   'cespare/vim-toml',
@@ -30,6 +29,15 @@ local plugins = {
     'skywind3000/asynctasks.vim',
     config = function()
       require('plugins.mappings').load_mappings('asynctasks')
+    end,
+  },
+  {
+    'Exafunction/codeium.vim',
+    init = function()
+      vim.g.codeium_disable_bindings = 1
+    end,
+    config = function()
+      require('plugins.mappings').load_mappings('codeium')
     end,
   },
   {

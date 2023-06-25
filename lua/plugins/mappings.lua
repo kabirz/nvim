@@ -168,6 +168,12 @@ M.zoom = {
   },
 }
 
+M.codeium = {
+  i = {
+     ['<C-]>'] = { vim.fn["codeium#Accept"], 'codeium accept', opts = { expr = true } },
+  },
+}
+
 M.load_mappings = function(section)
   local section_value = M[section]
   if not section_value then
